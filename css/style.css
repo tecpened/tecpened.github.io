@@ -41,7 +41,7 @@ html,body{
     /* background-color: yellowgreen; */
     margin: 5%;
     display: flex;
-    flex-wrap: wrap;
+/*     flex-wrap: wrap; */
     flex-direction: column;
     gap: 10rem;
 
