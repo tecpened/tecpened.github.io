@@ -16,6 +16,7 @@ function image(){
 image();
 
 
+
 // // Function to update height and width
 // function updateSize() {
 //     height.innerHTML = window.innerHeight;

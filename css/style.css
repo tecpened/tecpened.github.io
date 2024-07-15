@@ -6,7 +6,7 @@
     --secondary-color : #8F72E3;
     --container : #0e0e0e8a;
     --shadow : black;
-    --h1 : 1rem;
+    --h1 : 2rem;
 }
 
 html,body{
@@ -180,10 +180,10 @@ p{
     gap: 2rem;
 }
 
-/* .header{
-    margin-bottom: 2%;
-    background-color: blue;
-} */
+.header{
+    /* margin-bottom: 2%; */
+    /* background-color: blue; */
+}
 
 .categories{
     position: relative;
@@ -263,4 +263,3 @@ p{
     object-fit: cover;
     overflow: hidden;
 }
-
