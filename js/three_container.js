@@ -24,9 +24,16 @@ renderer.setSize( 1150, 650 );
 const controls = new OrbitControls( camera, canvas )
 
 // --Objects
-const mesh = new THREE.BoxGeometry(15, 32, 16)
+const geometry = new THREE.BoxGeometry(15, 32, 16)
 const material = new THREE.MeshStandardMaterial( {color : '#8F72E3'})
-const sphere = new THREE.Mesh( mesh, material)
+const box = new THREE.Mesh( geometry, material)
+box.position.set(-20,0,0)
+scene.add(box)
+
+const geometry2 = new THREE.TorusGeometry(10, 3, 16, 100)
+const material2 = new THREE.MeshStandardMaterial( {color : 'cyan'})
+const sphere = new THREE.Mesh( geometry2, material2)
+sphere.position.set(20,0,0)
 scene.add(sphere)
 
 // --Lights
@@ -38,6 +45,7 @@ function animate(){
     // requestAnimationFrame(animate);
     renderer.render(scene, camera)
     sphere.rotation.x += .005
+    box.rotation.x += .005
 
     controls.update()
 
