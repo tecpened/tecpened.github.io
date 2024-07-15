@@ -49,7 +49,7 @@ html,body{
 
 h2{
     color: var(--font);
-    font-size: 3.6vw;
+    font-size: 3vw;
     margin-bottom: 0;
     line-height: 1;
     /* background-color: red; */
@@ -58,7 +58,7 @@ h2{
 
 h3{
     color: var(--secondary-color);
-    font-size: 2.5vw;
+    font-size: 2vw;
     margin-bottom: 0;
     line-height: 1;
 }
@@ -67,7 +67,7 @@ h4{
     /* background-color: bisque; */
     color: var(--font);
     margin: 0;
-    font-size: 1.4vw;
+    font-size: 1vw;
     /* padding-left: .5rem; */
 }
 
@@ -79,7 +79,7 @@ h5{
 
 p{
     color: var(--font);
-    font-size: 1.4vw;
+    font-size: 1vw;
     font-weight: lighter;
 }
 
@@ -177,7 +177,7 @@ p{
     display: flex;
     /* flex-wrap: wrap; */
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .header{
@@ -196,7 +196,7 @@ p{
 
 .category{
     background-color: var(--rectangle);
-    padding: 1.4%;
+    padding: 1%;
     align-self: center;
     border-radius: 1rem;
     cursor: pointer;
@@ -212,8 +212,8 @@ p{
     /* margin: 5%; */
     position: relative;
     /* padding: 1rem; */
-    width : 100%;
-    height : 50rem ;
+    /* width : 100%; */
+    height : 40rem ;
     box-shadow: 0rem 0rem 1rem .1rem var(--shadow);
 }
 
