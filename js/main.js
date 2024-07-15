@@ -13,7 +13,7 @@ function image(){
     container.appendChild(im)
 }
 
-image();
+// image();
 
 
 

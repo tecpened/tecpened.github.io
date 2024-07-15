@@ -99,7 +99,7 @@ p{
     min-width: 70%;
     position: relative;
     /* padding: 2rem; */
-    box-shadow: 0rem 0rem 1rem .1rem var(--shadow);
+    /* box-shadow: 0rem 0rem 1rem .1rem var(--shadow); */
 }
 
 .static_image img{
