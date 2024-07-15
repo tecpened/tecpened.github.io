@@ -212,7 +212,7 @@ p{
     /* margin: 5%; */
     position: relative;
     /* padding: 1rem; */
-    /* width : 100%; */
+    width : 100%;
     height : 40rem ;
     box-shadow: 0rem 0rem 1rem .1rem var(--shadow);
 }
