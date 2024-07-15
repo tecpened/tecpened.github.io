@@ -18,7 +18,7 @@ const renderer = new THREE.WebGLRenderer({alpha : true});
 const canvas = document.querySelector('.static_image')
 canvas.appendChild(renderer.domElement)
 // renderer.setClearColor(0x5190B8)
-renderer.setSize( 1150, 650 );
+renderer.setSize( canvas.clientWidth, canvas.clientHeight );
 
 // --Controls
 const controls = new OrbitControls( camera, canvas )
@@ -52,3 +52,15 @@ function animate(){
 }
 
 renderer.setAnimationLoop(animate)
+
+function resizeRenderer() {
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    renderer.setSize(width, height);
+}
+
+// Initial call to set renderer size based on current canvas size
+resizeRenderer();
+
+// Call resizeRenderer() whenever the window is resized
+window.addEventListener('resize', resizeRenderer);
