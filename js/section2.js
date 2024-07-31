@@ -15,7 +15,14 @@ punch_line = [
     'focal point concepts'
 ]
 
-source = './public/1.jpg'
+source = [
+    '../public/Benefits/Analysis.svg',
+    '../public/Benefits/Available.svg',
+    '../public/Benefits/Creative.svg',
+    '../public/Benefits/Punctual.svg',
+    '../public/Benefits/Attractive.svg',
+
+]
 
 const container = document.querySelector('.container');
 
@@ -36,7 +43,8 @@ for (let i = 0; i < 5; i++){
 
     // Adding Image to the image group (group > group1 > grp_img1 > img)
     var pic = document.createElement('img');
-    pic.src = source;
+    pic.src = source[i];
+    // pic.style.height = '40%';
     grp_img.appendChild(pic);
 
     // Now creating text group inside the for loop generated group

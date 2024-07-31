@@ -1,5 +1,6 @@
 // Get The Section 3: Provisions
 const provisions = document.querySelector('.provisions');
+const header = document.querySelector('.header');
 
 listofCategories = [
     'Interior Design',
@@ -29,7 +30,7 @@ function create_category(numberofCategories)
 {
     const categories = document.createElement('div');
     categories.className = 'categories'
-    provisions.appendChild(categories);
+    header.appendChild(categories);
 
     for(i = 0; i< numberofCategories; i++){
         const category = document.createElement('div');
