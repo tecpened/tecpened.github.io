@@ -32,7 +32,42 @@ contents.style.gap = '1rem'
 
 
 //-- Left Column --\\
-// Create Left Column Parent ( Contact > Content > mails)
+// Create Right Column Parent ( Contact > Content > meet)
+const meet = document.createElement('div')
+meet.className = 'meet'
+contents.appendChild(meet)
+
+// Left Column Main Parent Container (meet)
+meet.style.display = 'flex'
+meet.style.flexDirection = 'column'
+meet.style.backgroundColor = container_color
+meet.style.padding = '2rem'
+meet.style.justifyContent = 'space-between'
+meet.style.width ='25%'
+
+const urlocation = document.createElement('div')
+urlocation.className = 'urlocation'
+meet.appendChild(urlocation)
+
+urlocation.style.display = 'flex'
+urlocation.style.flexDirection = 'column'
+
+const mailaddress = document.createElement('h')
+mailaddress.innerHTML = 'tecpen.info@gmail.com'
+urlocation.appendChild(mailaddress)
+
+const address = document.createElement('h')
+address.innerHTML = 'Montreal, Canada'
+urlocation.appendChild(address)
+
+// button
+const schedule = document.createElement('button')
+schedule.innerHTML = 'schedule'
+schedule.style.width = buttonwidth
+meet.appendChild(schedule)
+
+//-- Right Column --\\
+// Create Right Column Parent ( Contact > Content > mails)
 const mails = document.createElement('div')
 mails.className = 'mails'
 contents.appendChild(mails)
@@ -88,39 +123,3 @@ const send = document.createElement('button')
 send.innerHTML = 'send'
 send.style.width = buttonwidth;
 mails.appendChild(send)
-
-
-//-- Right Column --\\
-// Create Right Column Parent ( Contact > Content > meet)
-const meet = document.createElement('div')
-meet.className = 'meet'
-contents.appendChild(meet)
-
-// Right Column Main Parent Container (meet)
-meet.style.display = 'flex'
-meet.style.flexDirection = 'column'
-meet.style.backgroundColor = container_color
-meet.style.padding = '2rem'
-meet.style.justifyContent = 'space-between'
-meet.style.width ='25%'
-
-const urlocation = document.createElement('div')
-urlocation.className = 'urlocation'
-meet.appendChild(urlocation)
-
-urlocation.style.display = 'flex'
-urlocation.style.flexDirection = 'column'
-
-const mailaddress = document.createElement('h')
-mailaddress.innerHTML = 'tecpen.info@gmail.com'
-urlocation.appendChild(mailaddress)
-
-const address = document.createElement('h')
-address.innerHTML = 'Montreal, Canada'
-urlocation.appendChild(address)
-
-// button
-const schedule = document.createElement('button')
-schedule.innerHTML = 'schedule'
-schedule.style.width = buttonwidth
-meet.appendChild(schedule)

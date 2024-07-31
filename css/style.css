@@ -4,9 +4,9 @@
     --rectangle : #101010;
     --font : white;
     --secondary-color : #8F72E3;
-    --shadow : rgba(14, 14, 14, 0.5);
-    --title : 4rem;
-    --text : 2rem;
+    --shadow : rgb(0, 0, 0);
+    --title : 4vw;
+    --text : 1.5vw;
 }
 
 [data-theme='dark'] {
@@ -15,7 +15,7 @@
     --rectangle: #1E1E1E;
     --font: #1E1E1E;
     --secondary-color: #8F72E3;
-    --shadow: rgba(14, 14, 14, 0.5);
+    --shadow: rgba(14, 14, 14, 0.4);
     --title : 4rem;
     --text : 2rem;
 }
@@ -81,7 +81,7 @@ h4{
     /* background-color: bisque; */
     color: var(--font);
     margin: 0;
-    font-size: 1.5vw;
+    font-size: var(--text);
     font-weight: 200;
     /* padding-left: .5rem; */
 }
