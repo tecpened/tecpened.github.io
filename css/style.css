@@ -7,8 +7,10 @@
     --font: #1E1E1E;
     --font_2 : white;
     --shadow: rgba(14, 14, 14, 0.4);
-    --title : 4rem;
-    --text : 2rem;
+    --title : 4vw;
+    --text : 1.5vw;
+    /* --title : 4rem;
+    --text : 2rem; */
 }
 
 [data-theme='dark'] {
@@ -28,7 +30,7 @@ html,body{
     background-color: var(--primary-color);
     margin: 0%;
     /* overflow: hidden; */
-    font-family: 'Inter';
+    font-family: 'Montserrat';
 }
 
 
@@ -54,7 +56,7 @@ html,body{
 .main{
     position: relative;
     /* background-color: yellowgreen; */
-    margin: 8%;
+    margin: 10%;
     display: flex;
     /* flex-wrap: wrap; */
     flex-direction: column;
@@ -83,16 +85,17 @@ h3 {
     background-clip: text;
     color: transparent;
     font-size: 3vw;
-    width: 35vw;
+    width: 39vw;
 }
 
 h4, h5 {
     color: var(--font);
-    font-weight: 200;
+    font-weight: 300;
 }
 
 h4 {
-    font-size: var(--text);
+    /* font-size: var(--text); */
+    font-size: 1.2vw
 }
 
 h5 {
@@ -102,9 +105,8 @@ h5 {
 
 h6 {
     color: var(--font);
-    font-size: .7rem;
-    width: 10rem;
-    margin: 0 5%;
+    font-size: .8rem;
+    /* margin: 0 5%; */
     line-height: 1;
     font-weight: 300;
 }
@@ -156,9 +158,11 @@ p {
 }
 
 .text{
-    /* background-color: green; */
+    display: flex;
     position: relative;
-    width: 30rem;
+    width: 35rem;
+    gap: .5rem;
+    /* background-color: green; */
     /* display: flex-end; */
     flex-direction: column;
 }
@@ -184,7 +188,7 @@ p {
     flex-direction: column;
     font-size: 1.4rem;
     text-align: start;
-    max-width: 40rem;
+    max-width: 35rem;
     gap: 1;
     align-self: center;
     color: var(--font);
@@ -197,6 +201,15 @@ p {
     width: 4rem;
     box-shadow: 0rem 0rem .2rem 0.0rem var(--shadow);
     border-radius: 100%;
+    transition: .5s ease-in-out;
+}
+
+
+.moral img:hover {
+    transform: rotateZ(360deg);
+    width: 5rem;
+    transition: .5s ease-in-out;
+    box-shadow: 0rem 0rem .5rem 0.0rem var(--secondary-color);
 }
 
 .groups{
@@ -206,7 +219,6 @@ p {
     width: 50rem;
     justify-content: start;
     gap: 1rem;
-
 }
 
 .group1, .group2, .group3, .group4, .group5{
@@ -219,15 +231,24 @@ p {
     background-color: var(--primary-color);
     border-radius: 2rem;
     box-shadow: 0rem 0rem .2rem 0.0rem var(--shadow);
+    transition: .5s ease-in-out;
     /* justify-content: space-between; */
+}
+
+.group1:hover, .group2:hover, .group3:hover, .group4:hover, .group5:hover {
+    width: 18rem;
+    height: 9rem;
+    transition: .5s ease-in-out;
+    box-shadow: 0rem 0rem .5rem 0.0rem var(--secondary-color);
 }
 
 .groups img{
     position: relative;
     background-color: var(--rectangle);
     padding: 1rem;
+    height: 1rem;
     width: 1rem;
-    border-radius: 50%;
+    border-radius: 10rem;
 }
 
 
@@ -271,14 +292,29 @@ p {
     padding: 2%;
     border-radius: .5rem;
     cursor: pointer;
-    width: auto;
-    transition: .2s ease-in-out;
+    padding-right: 2%;
+    transition: .4s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .category:hover{
     background-color: var(--secondary-color);
-    width: 20rem;
-    transition: .2s ease-in-out;
+    padding-right: 20%;
+    transition: .4s ease-in-out;
+}
+.category:hover::before{
+    justify-content: center;
+    content: '<';
+    color: var(--primary-color);
+    transition: .4s ease-in-out;
+}
+.category:hover::after{
+    justify-content: center;
+    content: '\\>';
+    color: var(--primary-color);
+    transition: .4s ease-in-out;
 }
 
 .right_column{
@@ -319,12 +355,14 @@ p {
 .description p{
     color: rgba(255, 255, 255, 0);
     transition: .5s ease-in-out;
+    transform: translateX(-10rem);
 }
 .description p:hover{
     transition: .5s ease-in-out;
     border-top-left-radius: 1rem;
     color: var(--primary-color);
     transition: .5s ease-in-out;
+    transform: translateX(0rem);
 }
 
 .carous{
