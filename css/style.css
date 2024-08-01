@@ -125,7 +125,7 @@ p {
     position: relative;
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
 }
 
 
@@ -179,6 +179,7 @@ p {
     /* gap: 0rem; */
     justify-content: space-between;
     align-items: end;
+    flex-wrap: wrap;
 
 }
 
@@ -261,6 +262,7 @@ p {
     flex-direction: row;
     /* gap: 1.5rem; */
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .provision_left{
@@ -389,8 +391,8 @@ p {
     display: flex;
     /* background-color: red; */
     justify-content: space-between;
+    flex-wrap: wrap;
 }
-
 .contact_left{
     display: flex;
     flex-direction: column;
@@ -403,8 +405,6 @@ p {
     flex-direction: column;
     font-weight: 200;
 }
-
-
 .contact_right{
     display: flex;
     flex-direction: column;
@@ -416,7 +416,6 @@ p {
     margin: 2rem;
     box-shadow: 0rem 0rem .2rem 0.0rem var(--shadow);
 }
-
 form{
     display: flex;
     flex-direction: column;
@@ -425,12 +424,10 @@ form{
     font-weight: 200;
     /* gap: .5rem; */
 }
-
 label{
     display: flex;
     margin-top: .5rem;
 }
-
 input, textarea{
     padding: 1rem;
     border-radius: .5rem;
@@ -438,8 +435,6 @@ input, textarea{
     margin-top: .5rem;
     border: none;
 }
-
-
 button{
     margin-top: 1rem;
     background-color: var(--secondary-color);
@@ -451,4 +446,26 @@ button{
     padding-right: 1.5rem;
     width: auto;
     align-self: flex-start;
+}
+/* Team Section */
+.Team{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.team_left{
+    display: flex;
+    align-self: center;
+}
+.team_right{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 50rem;
+}
+
+.Team img{
+    width: 18rem;
 }
