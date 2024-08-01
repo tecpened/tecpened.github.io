@@ -60,7 +60,7 @@ html,body{
     display: flex;
     /* flex-wrap: wrap; */
     flex-direction: column;
-    gap: 20rem;
+    gap: 10rem;
 
 }
 
@@ -119,7 +119,6 @@ p {
 }
 
 /* Hero Section: Includes Image and a text Body */
-
 .hero{
     /* background-color: blue; */
     position: relative;
@@ -128,8 +127,6 @@ p {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-
 .static_image{
     /* background-color: red; */
     display: flex;
@@ -140,25 +137,22 @@ p {
     /* padding: 2rem; */
     /* box-shadow: 0rem 0rem 1rem .1rem var(--shadow); */
 }
-
 .static_image canvas{
     /* width: 10%; */
     height: 100%;
     /* box-shadow: 0rem 0rem 1rem .1rem var(--shadow); */
 }
-
 .static_image img{
     width: 100%;
     height: 100%;
     background-color: blueviolet;
 }
-
 .text_body{
-    padding: 2%;
+    margin-top: 20%;
+    padding: 4%;
     /* background-color: salmon; */
     align-self: center;
 }
-
 .text{
     display: flex;
     position: relative;
@@ -168,7 +162,6 @@ p {
     /* display: flex-end; */
     flex-direction: column;
 }
-
 
 /* 2nd Section */
 .container{
@@ -245,7 +238,6 @@ p {
     width: 1rem;
     border-radius: 10rem;
 }
-
 
 /* 3rd Section */
 .provisions {
@@ -392,7 +384,6 @@ p {
 }
 
 /* Contact Us Section */
-
 .contact{
     display: flex;
     /* background-color: red; */
