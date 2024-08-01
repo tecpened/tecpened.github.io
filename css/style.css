@@ -216,8 +216,9 @@ p {
     display: flex;
     flex-direction: row;
     padding: 2rem;
-    width: 20rem;
+    width: 17vw;
     height: 8rem;
+    min-width: 15rem;
     gap: 1rem;
     background-color: var(--primary-color);
     border-radius: 2rem;
@@ -255,7 +256,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    /* width: 30rem; */
+    width: 30rem;
     align-self: center;
 }
 .header{
@@ -300,7 +301,7 @@ p {
     color: var(--primary-color);
     transition: .4s ease-in-out;
 }
-.right_column{
+.provision_right{
     position: relative;
 }
 .detail{
@@ -308,7 +309,8 @@ p {
     position: relative;
     /* padding: 1rem; */
     width: 50vw;
-    min-width: 28rem;
+    /* background-color: red; */
+    /* min-width: 25rem; */
     height : 40rem ;
     border-radius: 1rem;
     box-shadow: 0rem 0rem 1rem .1rem var(--shadow);
@@ -329,7 +331,8 @@ p {
     position: absolute;
     z-index: 1;
     padding: 3rem;
-    width: 30rem;
+    width: 30vw;
+    min-width: 20rem;
 
 }
 .description p{
