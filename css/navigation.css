@@ -52,24 +52,6 @@
 
 }
 
-h1{
-    color: var(--font);
-    margin-left: 5%;
-    margin-right: 5%;
-    line-height: 0;
-    font-size: 2.5rem;
-    /* background-color: red; */
-
-}
-
-h6{
-    color: var(--font);
-    margin-left: 5%;
-    margin-right: 5%;
-    line-height: 0em;
-    font-size: .7rem;
-    /* background-color: aqua; */
-}
 .toggle{
     position: fixed;
     display: flex;

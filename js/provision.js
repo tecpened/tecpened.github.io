@@ -1,6 +1,8 @@
 // Get The Section 3: Provisions
 const provisions = document.querySelector('.provisions');
+const provision_left = document.querySelector('.provision_left');
 const header = document.querySelector('.header');
+const provision_right = document.querySelector('.provision_right');
 
 listofCategories = [
     'Interior Design',
@@ -30,7 +32,7 @@ function create_category(numberofCategories)
 {
     const categories = document.createElement('div');
     categories.className = 'categories'
-    header.appendChild(categories);
+    provision_left.appendChild(categories);
 
     for(i = 0; i< numberofCategories; i++){
         const category = document.createElement('div');
@@ -56,7 +58,7 @@ create_category(3)
 // Create a division and name it 'detail', lastly add to the section
 const detail = document.createElement('div');
 detail.className = 'detail';
-provisions.appendChild(detail);
+provision_right.appendChild(detail);
 
 // (Provision: Parent Div > Detail: Gallery Div > Description)
 const description = document.createElement('div')
@@ -114,7 +116,7 @@ function gallery(numberofImages, image_path) {
     for (let i = 0; i < numberofImages; i++) {
         const tiles = document.createElement('img');
         tiles.src = `${image_path}${i + 1}.png`;
-        tiles.style.width = '12rem';
+        tiles.style.width = '6rem';
         tiles.style.height = '100%';
         tiles.style.margin = '0%';
         tiles.style.borderRadius = '5%';
