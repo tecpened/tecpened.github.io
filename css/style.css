@@ -120,6 +120,8 @@ p {
 
 /* Hero Section: Includes Image and a text Body */
 .hero{
+    margin-top: 5%;
+    margin-bottom: 10%;
     /* background-color: blue; */
     position: relative;
     display: flex;
@@ -148,7 +150,6 @@ p {
     background-color: blueviolet;
 }
 .text_body{
-    margin-top: 20%;
     padding: 4%;
     /* background-color: salmon; */
     align-self: center;
