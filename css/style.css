@@ -130,7 +130,7 @@ p {
 .static_image{
     /* background-color: red; */
     display: flex;
-    height: 50rem;
+    height: 40rem;
     min-width: 40%;
     position: relative;
     /* padding: 2rem; */
@@ -140,6 +140,7 @@ p {
 .static_image canvas{
     width: 10%;
     height: 100%;
+    /* box-shadow: 0rem 0rem 1rem .1rem var(--shadow); */
 }
 
 .static_image img{
