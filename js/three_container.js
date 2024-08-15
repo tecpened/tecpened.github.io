@@ -24,7 +24,6 @@ renderer.gammaOutput = true;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Soft shadows
 
-
 // --Controls
 const controls = new OrbitControls( camera, canvas )
 controls.enableZoom = false
@@ -49,11 +48,12 @@ scene.add(light)
 // Importing A Model
 
 let tp_model = []
-let value = 10
+let value = 10;
 const loader = new GLTFLoader();
 loader.load('/public/tecpen.glb', function ( gltf ){
     let model = gltf.scene;
     model.position.y = -20;
+    model.position.z = -10;
     model.scale.set(value, value, value);
     model.rotation.y = -Math.PI/2;
     tp_model = model;

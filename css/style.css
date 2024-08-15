@@ -56,6 +56,7 @@ html,body{
 .main{
     position: relative;
     /* background-color: yellowgreen; */
+    margin-top: 8% !important;
     margin: 10%;
     display: flex;
     /* flex-wrap: wrap; */
@@ -71,11 +72,13 @@ h1, h2, h3, h4, h5, h6, p {
 
 h1 {
     color: var(--font);
-    margin: 0 5%;
-    font-size: 2.5rem;
+    /* margin: 0 5%; */
+    font-size: 4rem;
+    line-height: 1;
 }
 
 h2 {
+    color: var(--font);
     font-size: 3rem;
     line-height: 1;
 }
@@ -90,17 +93,18 @@ h3 {
 
 h4, h5 {
     color: var(--font);
-    font-weight: 300;
 }
 
 h4 {
     /* font-size: var(--text); */
-    font-size: 1.2vw
+    font-size: 1.5vw;
+    line-height: 1;
+    font-weight: 500;
 }
 
 h5 {
-    font-size: 1vw;
-    font-weight: 100;
+    font-size: 1.2vw;
+    font-weight: 300;
 }
 
 h6 {
@@ -120,8 +124,8 @@ p {
 
 /* Hero Section: Includes Image and a text Body */
 .hero{
-    margin-top: 5%;
-    margin-bottom: 10%;
+    /* margin-top: 5%; */
+    /* margin-bottom: 10%; */
     /* background-color: blue; */
     position: relative;
     display: flex;
@@ -130,38 +134,57 @@ p {
     justify-content: space-between;
 }
 .static_image{
-    /* background-color: red; */
+    background-color: var(--secondary-color);
     display: flex;
-    height: 30rem;
+    height: 45rem;
     width: 50rem;
+    border-radius: 2rem;
     min-width: 30%;
     position: relative;
     /* padding: 2rem; */
-    /* box-shadow: 0rem 0rem 1rem .1rem var(--shadow); */
+    /* box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.5); */
 }
 .static_image canvas{
     /* width: 10%; */
-    height: 100%;
     /* box-shadow: 0rem 0rem 1rem .1rem var(--shadow); */
 }
 .static_image img{
     width: 100%;
     height: 100%;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 .text_body{
-    padding: 4%;
+    /* padding: 4%; */
     /* background-color: salmon; */
     align-self: center;
 }
 .text{
     display: flex;
     position: relative;
-    width: 30rem;
+    width: 30vw;
+
     gap: .5rem;
     /* background-color: green; */
     /* display: flex-end; */
     flex-direction: column;
+}
+
+/* Motto Section */
+.motto{
+    padding: 10%;
+    /* background-color: red; */
+    justify-content: center;
+    align-self: center;
+    height: 20rem;
+}
+.mottotext{
+    text-align: center;
+    background: linear-gradient(to bottom, black 0%, black 50%,  #8F72E3 50%, #8F72E3 100%);
+    background-clip: text;
+    color: transparent;
+    font-size: 5vw;
+    font-weight: 600;
+    width: 50rem;
 }
 
 /* 2nd Section */
@@ -169,14 +192,13 @@ p {
     position: relative;
     opacity: 100%;
     border-radius: 1rem;
-    /* background-color: red; */
+    /* background-color: yellow; */
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
     justify-content: space-between;
     align-items: end;
     flex-wrap: wrap;
-
 }
 .moral{
     position: relative;
