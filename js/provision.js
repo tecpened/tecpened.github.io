@@ -116,7 +116,7 @@ function gallery(numberofImages, image_path) {
     for (let i = 0; i < numberofImages; i++) {
         const tiles = document.createElement('img');
         tiles.src = `${image_path}${i + 1}.png`;
-        tiles.style.width = '6rem';
+        tiles.style.width = '6vw';
         tiles.style.height = '100%';
         tiles.style.margin = '0%';
         tiles.style.borderRadius = '5%';

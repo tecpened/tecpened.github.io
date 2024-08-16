@@ -64,7 +64,6 @@ html,body{
     gap: 10rem;
 
 }
-
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
@@ -109,7 +108,7 @@ h6 {
 }
 p {
     color: var(--font_2);
-    font-size: 1rem;
+    font-size: 1vw;
     /* line-height: 1; */
     font-weight: lighter;
 }
@@ -352,8 +351,8 @@ p {
 .description{
     position: absolute;
     z-index: 1;
-    padding: 3rem;
-    width: 30vw;
+    padding: 3vw;
+    width: 25vw;
     /* min-width: 20rem; */
 
 }
