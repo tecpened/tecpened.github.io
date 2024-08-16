@@ -48,12 +48,12 @@ scene.add(light)
 // Importing A Model
 
 let tp_model = []
-let value = 10;
+let value = 14;
 const loader = new GLTFLoader();
 loader.load('/public/tecpen.glb', function ( gltf ){
     let model = gltf.scene;
-    model.position.y = -20;
-    model.position.z = -10;
+    model.position.y = -28;
+    model.position.z = -15;
     model.scale.set(value, value, value);
     model.rotation.y = -Math.PI/2;
     tp_model = model;

@@ -134,14 +134,16 @@ p {
     justify-content: space-between;
 }
 .static_image{
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
+    /* opacity: 0.6; */
     display: flex;
-    height: 45rem;
-    width: 50rem;
+    height: 30rem;
+    width: 35rem;
     border-radius: 2rem;
     min-width: 30%;
     position: relative;
-    /* padding: 2rem; */
+    margin: 6rem;
+    box-shadow: 0rem 0rem 10rem 2rem var(--secondary-color);
     /* box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.5); */
 }
 .static_image canvas{
