@@ -115,46 +115,44 @@ p {
 
 /* Hero Section: Includes Image and a text Body */
 .hero{
-    /* margin-top: 5%; */
+    margin-top: 5%;
     /* margin-bottom: 10%; */
     /* background-color: blue; */
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 3vw;
+    align-self: center;
     justify-content: space-between;
+}
+.static_body{
+    width: 40vw;
+    min-width: 15rem;
+    /* height: 30vw; */
+
 }
 .static_image{
     /* background-color: var(--secondary-color); */
     /* opacity: 0.6; */
     display: flex;
-    height: 30rem;
-    width: 35rem;
+    height: 100%;
     border-radius: 2rem;
-    min-width: 30%;
     position: relative;
-    margin: 6rem;
-    box-shadow: 0rem 0rem 10rem 2rem var(--secondary-color);
+    /* margin: 6rem; */
+    /* box-shadow: 0rem 0rem 10rem 2rem var(--secondary-color); */
     /* box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.5); */
 }
-.static_image canvas{
-    /* width: 10%; */
-    /* box-shadow: 0rem 0rem 1rem .1rem var(--shadow); */
-}
-.static_image img{
-    width: 100%;
-    height: 100%;
-    /* background-color: blueviolet; */
-}
+
 .text_body{
-    /* padding: 4%; */
+    padding: 0% 0%;
     /* background-color: salmon; */
     align-self: center;
 }
 .text{
     display: flex;
     position: relative;
-    width: 30vw;
+    width: 35vw;
 
     gap: .5rem;
     /* background-color: green; */
