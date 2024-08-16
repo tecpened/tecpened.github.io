@@ -413,9 +413,8 @@ p {
 /* Contact Us Section */
 .contact{
     display: flex;
-    align-self: center;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     /* background-color: red; */
     justify-content: space-between;
     flex-direction: column;
@@ -426,7 +425,7 @@ p {
     display: flex;
     flex-direction: column;
     /* background-color: red; */
-    justify-content: center;
+    /* justify-content: center; */
     gap: 5rem;
 }
 .urlocation{
