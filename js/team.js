@@ -8,7 +8,7 @@ source = [
 founders = [
     'Nahian Hasan',
     'Nihaz Bin Hashem',
-    'Dudhu Belal',
+    'Belal Mahmud',
     'Tofiqur Rahman'
 
 ]

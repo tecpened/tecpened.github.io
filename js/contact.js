@@ -21,7 +21,7 @@ const contact_right = document.querySelector('.contact_right')
 // Create Left Column Parent ( Contact > Content > meet)
 const meet = document.createElement('div')
 meet.className = 'meet'
-contact_left.appendChild(meet)
+contact_right.appendChild(meet)
 
 // Left Column Main Parent Container (meet)
 
@@ -29,16 +29,22 @@ const urlocation = document.createElement('div')
 urlocation.className = 'urlocation'
 meet.appendChild(urlocation)
 
-const mailaddress = document.createElement('h')
-mailaddress.innerHTML = 'tecpen.info@gmail.com'
-urlocation.appendChild(mailaddress)
+// const mailaddress = document.createElement('h')
+// mailaddress.innerHTML = 'tecpen.info@gmail.com'
+// urlocation.appendChild(mailaddress)
 
-const address = document.createElement('h')
-address.innerHTML = 'Montreal, Canada'
-urlocation.appendChild(address)
+// const address = document.createElement('h')
+// address.innerHTML = 'Montreal, Canada'
+// urlocation.appendChild(address)
 
 // button
 const schedule = document.createElement('button')
+schedule.className = 'ScheduleButton'
 schedule.innerHTML = 'Schedule A Meeting'
 
-meet.appendChild(schedule)
+const button1 = document.createElement('button')
+button1.className = 'ContactButton'
+button1.innerHTML = 'Contact Us'
+
+contact_right.appendChild(button1)
+contact_right.appendChild(schedule)
