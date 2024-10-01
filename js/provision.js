@@ -1,4 +1,51 @@
-// Get The Section 3: Provisions
+// Section 3: Our Services
+serviceSource = [
+    './public/animation/1.png',
+    './public/animation/2.png',
+    './public/animation/3.png',
+]
+serviceCategories = [
+    'Web and App Development',
+    'Product Modelling',
+    'UI/UX Design'
+]
+
+function image(){
+    const services = document.querySelector('.services');
+
+    for(i = 0; i <= 2; i++){
+        const service = document.createElement('div');
+        service.className = `service${i}`;
+
+
+        
+
+        const serviceImage  = document.createElement('img')
+        serviceImage.src = serviceSource[i]
+
+        const serviceName = document.createElement('h4')
+        serviceName.textContent = serviceCategories[i];
+
+        service.appendChild(serviceImage)
+        service.appendChild(serviceName)
+
+        services.appendChild(service);
+
+    }
+    // const im1  = document.createElement('img');
+    // const im2  = document.createElement('img');
+    // const im3  = document.createElement('img');
+    // im1.src = source;
+    // im2.src = source;
+    // im3.src = source;
+
+    // services.appendChild(im1)
+    // services.appendChild(im2)
+    // services.appendChild(im3)
+}
+image();
+
+// Get The Section 4: Provisions
 const provisions = document.querySelector('.provisions');
 const provision_left = document.querySelector('.provision_left');
 const header = document.querySelector('.header');
@@ -26,7 +73,7 @@ imageSource = [
 './public/animation/'
 ]
 
-for(i = 1; i <= 4; i++){
+for(i = 1; i <= 6; i++){
 let source = `${imageSource[2]}${i}.png`
 const visuals = document.createElement('img');
 visuals.src = source;

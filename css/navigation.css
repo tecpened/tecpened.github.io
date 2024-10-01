@@ -36,23 +36,23 @@
     transition: 0.5s;
     cursor: pointer;
     /* padding-top: .5rem; */
-    height: 5rem;
+    height: 4rem;
 }
 
 .left{
-    margin-left: 5vw;
+    margin-left: 10vw;
     /* background-color: red; */
     align-self: center;
 }
 
 .items{
     /* background-color: red; */
-    margin-right: 5vw;
+    margin-right: 10vw;
     align-items: center;
     position: relative;
     display: flex;
     flex-direction: row;
-    gap: .5rem;
+    gap: .8rem;
 
 }
 .theme-button{
@@ -64,7 +64,6 @@
     color: var(--font);
     transition: .2s ease-in-out;
 }
-
 .theme-button:hover{
     border-radius: 1rem;
     padding: .5rem 0.5rem;

@@ -2,16 +2,6 @@
 // rectangle.className = 'rectangle';
 // document.body.prepend(rectangle);
 
-// Section 1: The big hero image 
-source = './public/1.jpg'
-function image(){
-    const container = document.querySelector('.static_image');
-
-    const im  = document.createElement('img');
-    im.src = source;
-
-    container.appendChild(im)
-}
 
 const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -22,7 +12,6 @@ const toggleTheme = () => {
 // Example: Adding an event listener to a button
 document.querySelector('.theme-button').addEventListener('click', toggleTheme);
 
-// image();
 
 
 
