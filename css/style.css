@@ -271,9 +271,20 @@ p {
     box-shadow: 0rem 0rem 1rem .5rem var(--shadow);
     transition: ease-in-out .5s;
 }
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.315), rgba(0, 0, 0, 0.5)); /* Adjust colors and opacity as needed */
+    z-index: 1; /* Ensure the gradient sits on top of the image */
+    pointer-events: none; /* Optional: Prevents text from blocking clicks */
+}
 .services img {
     position: relative;
-    object-fit: fill;
+    object-fit: cover;
     width: 100%;
     height: 100%;
     transition: transform 0.3s ease;

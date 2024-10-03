@@ -1,8 +1,8 @@
 // Section 3: Our Services
 serviceSource = [
-    './public/animation/1.png',
-    './public/animation/2.png',
-    './public/animation/3.png',
+    './public/services/1.jpg',
+    './public/services/2.jpg',
+    './public/services/3.jpg',
 ]
 serviceCategories = [
     'Web and App Development',
@@ -16,10 +16,6 @@ function image(){
     for(i = 0; i <= 2; i++){
         const service = document.createElement('div');
         service.className = `service${i}`;
-
-
-        
-
         const serviceImage  = document.createElement('img')
         serviceImage.src = serviceSource[i]
 
