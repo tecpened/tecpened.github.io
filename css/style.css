@@ -22,11 +22,15 @@
     --text : 2rem; */
 }
 
-html,body{
+html, body{
+    position: relative;
+    display: flex;
+    flex-direction: column;
     background-color: var(--primary-color);
-    margin: 3%;
+    margin-inline: 3%;
     font-family: 'Montserrat';
     overflow: hidden;
+    gap: 1rem;
 }
 
 ::-webkit-scrollbar{
@@ -48,14 +52,14 @@ h1, h2, h3, h4, h5, h6, p {
 h1 {
     color: var(--font);
     /* margin: 0 5%; */
-    font-size: 2vw;
+    font-size: 48px;
     line-height: 1;
     font-weight: 700;
 }
 /* Breadcrumb */
 h2 {
     color: var(--font);
-    font-size: .6vw;
+    font-size: 10px;
     line-height: 1;
 }
 /* WordMark Only */
@@ -74,23 +78,29 @@ h4, h5 {
 }
 h4 {
     /* font-size: var(--text); */
-    font-size: .8vw;
+    font-size: 16px;
     line-height: 1;
     font-weight: 500;
 }
 h5 {
-    font-size: .7vw;
+    font-size: 10px;
     font-weight: 400;
+    transition: 0.5s ease-in-out;
+    padding: .4rem .5rem;
+    border-radius: .5rem;
 }
 h5:hover {
-    font-size: .8vw;
-    text-decoration: underline;
+    transition: 0.5s ease-in-out;
+    font-size: 11px;
+    border: solid .05rem #fff;
+    padding: .5rem .6rem;
+    border-radius: .5rem;
 }
 
 h6{
     padding: 1.3rem;
     border-radius: .5rem;
-    font-size: .8vw;
+    font-size: 12px;
     font-weight: 400;
     background-color: var(--shadow);
     color: var(--font);
@@ -127,7 +137,7 @@ button{
 
     }
     h2 {
-        font-size: 18px;
+        font-size: 10px;
     }
     /* WordMark Only */
     h3 {
@@ -147,13 +157,13 @@ button{
         font-weight: 500;
     }
     h5 {
-        font-size: 14px;
+        font-size: 10px;
         font-weight: 400;
     }
     h6{
         padding: 1.3rem;
         border-radius: .5rem;
-        font-size: 20px;
+        font-size: 12px;
         font-weight: 400;
         font-weight: 400;
         background-color: var(--shadow);
