@@ -22,7 +22,7 @@
 
 .navigation{
     align-self: center;
-    /* vertical-align: middle; */
+    vertical-align: middle;
     /* align-items: center; */
     top: 0;
     position: fixed;
@@ -72,9 +72,11 @@
     gap: .8rem;
 }
 .theme-button{
+
     border-radius: 1rem;
+    align-self: center;
     margin: .5rem 0.5rem;
-    /* background-color: var(--container); */
+    padding: .5rem 0.5rem;
     border: none;
     cursor: pointer;
     color: var(--font);
@@ -83,7 +85,7 @@
 .theme-button:hover{
     border-radius: 1rem;
     padding: .5rem 0.5rem;
-    background-color: var(--container);
+    background-color: var(--rectangle);
     border: none;
     cursor: pointer;
     color: var(--primary-color);
@@ -105,7 +107,7 @@
 
 @media (max-width: 1050px) {
     .right{
-        width: 65vw;
+        width: 60vw;
         justify-content: end;
     }
     .media{

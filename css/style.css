@@ -127,7 +127,7 @@ button{
 
     }
     h2 {
-        font-size: 16px;
+        font-size: 18px;
     }
     /* WordMark Only */
     h3 {
@@ -142,16 +142,26 @@ button{
     /* Tabs and Simple Define (h4 h5) */
     h4 {
         /* font-size: var(--text); */
-        font-size: 12px;
+        font-size: 16px;
         line-height: 1;
         font-weight: 500;
     }
     h5 {
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 400;
     }
+    h6{
+        padding: 1.3rem;
+        border-radius: .5rem;
+        font-size: 20px;
+        font-weight: 400;
+        font-weight: 400;
+        background-color: var(--shadow);
+        color: var(--font);
+        line-height: 1;
+    }
     p {
-        font-size: 12px;
+        font-size: 16px;
     }
     button{
         font-size: 12px;
