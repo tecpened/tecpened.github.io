@@ -55,7 +55,7 @@
 .content-image {
     width: 100%;  /* Ensures the image spans the width of its container */
     max-width: 300px; /* Maximum width for each image */
-    height: 300px; /* Maintain aspect ratio */
+    height: 400px; /* Maintain aspect ratio */
     object-fit: cover; /* This ensures images are cropped to fit the area without distorting their aspect ratio */
 
 }

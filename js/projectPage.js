@@ -116,6 +116,7 @@ function changeCategoryContent(category, content) {
     sidebarTitle.textContent = category; // Change sidebar heading to the category
 }
 
+const container = document.querySelector('.container');
 //Filtering and Projecting Data
 function fetchProjects(category) {
     // Get the corresponding data or an empty array if the category is not found
@@ -160,33 +161,11 @@ function fetchProjects(category) {
         // Add a click event to each project item
         item.addEventListener('click', function() {
             showProjectDescription(projectsData[index]);
+            container.style.filter = 'blur(10px)';
         });
     });
 
 }
-
-
-// Show the project description in a modal or a new section
-// function showProjectDescription(project) {
-//     // Create a modal or description box
-//     const descriptionModal = document.createElement('div');
-//     descriptionModal.className = 'description-modal';
-//     descriptionModal.innerHTML = `
-//         <img src="${project.image}" alt="${project.title}">
-//         <h2>${project.title}</h2>
-//         <p>${project.description}</p>
-//         <button class="close-modal">Close</button>
-//     `;
-    
-//     // Append the modal to the body
-//     document.body.appendChild(descriptionModal);
-
-//     // Close the modal when the close button is clicked
-//     const closeButton = descriptionModal.querySelector('.close-modal');
-//     closeButton.addEventListener('click', function() {
-//         descriptionModal.remove();
-//     });
-// }
 
 function showProjectDescription(project) {
     // Create a modal or description box
@@ -197,7 +176,6 @@ function showProjectDescription(project) {
         <h2>${project.title}</h2>
         <p>${project.description}</p>
     `;
-    
     // Create the close button
     const closeButton = document.createElement('button');
     closeButton.className = 'close-modal';
@@ -212,6 +190,7 @@ function showProjectDescription(project) {
     // Close the modal when the close button is clicked
     closeButton.addEventListener('click', function() {
         descriptionModal.remove();
-        closeButton.style.display ='none'
+        closeButton.style.display ='none';
+        container.style.filter = 'blur(0px)';
     });
 }
