@@ -109,7 +109,6 @@
     .right{
         width: 60vw;
         justify-content: end;
-       
     }
     .media{
         display: none;
@@ -118,5 +117,4 @@
         z-index: 100;
         gap: 1px;
     }
-   
 }

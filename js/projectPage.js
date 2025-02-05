@@ -38,8 +38,20 @@ const sidebarHeading = document.getElementById('sidebar-heading');
 const sidebarTitle = document.getElementById('sidebar-title');
 const sidebarSubtitle = document.getElementById('sidebar-subtitle');
 
-const projectCategories = document.getElementById('project-categories');
+const bottomSidebar = document.getElementById('bottom');
 
+// Function to check page name
+function checkPage(page){
+    if(page == "company"){
+        bottomSidebar.innerHTML = "company profile";
+    }
+    else if(page == "services"){
+        bottomSidebar.innerHTML = "services";
+    }
+    else{
+        bottomSidebar.innerHTML = "contact";
+    }
+}
 // Function to change the content
 function changeSidebarText(page) {
     sidebarHeading.textContent = `${pageContent[page].heading}`;
@@ -49,9 +61,11 @@ function changeSidebarText(page) {
     // If the page is "projects", show the categories under it
     if (page === "projects") {
         displayCategories(pageContent.projects.categories);
-        } else {
-        projectCategories.innerHTML = ""; // Hide categories if not "projects"
-        }
+    }
+    else {
+        // bottomSidebar.innerHTML = ""; // Hide categories if not "projects"
+        checkPage(page);
+    }
 }
 
 // Add event listeners to each nav item
@@ -64,7 +78,7 @@ navItems.forEach(item => {
 
 
 function displayCategories(categories) {
-    projectCategories.innerHTML = ""; // Clear previous categories
+    bottomSidebar.innerHTML = ""; // Clear previous categories
     for (const category in categories) {
         // Create the category element
         const categoryElement = document.createElement("h6");
@@ -75,7 +89,7 @@ function displayCategories(categories) {
         categoryElement.style.transition = "none"; // Disable any default transition
 
         // Append the element to the DOM
-        projectCategories.appendChild(categoryElement);
+        bottomSidebar.appendChild(categoryElement);
 
         // Function to animate the opacity (fade-in effect)
         let opacity = 0;
@@ -153,6 +167,27 @@ function fetchProjects(category) {
 
 
 // Show the project description in a modal or a new section
+// function showProjectDescription(project) {
+//     // Create a modal or description box
+//     const descriptionModal = document.createElement('div');
+//     descriptionModal.className = 'description-modal';
+//     descriptionModal.innerHTML = `
+//         <img src="${project.image}" alt="${project.title}">
+//         <h2>${project.title}</h2>
+//         <p>${project.description}</p>
+//         <button class="close-modal">Close</button>
+//     `;
+    
+//     // Append the modal to the body
+//     document.body.appendChild(descriptionModal);
+
+//     // Close the modal when the close button is clicked
+//     const closeButton = descriptionModal.querySelector('.close-modal');
+//     closeButton.addEventListener('click', function() {
+//         descriptionModal.remove();
+//     });
+// }
+
 function showProjectDescription(project) {
     // Create a modal or description box
     const descriptionModal = document.createElement('div');
@@ -161,16 +196,22 @@ function showProjectDescription(project) {
         <img src="${project.image}" alt="${project.title}">
         <h2>${project.title}</h2>
         <p>${project.description}</p>
-        <button class="close-modal">Close</button>
     `;
+    
+    // Create the close button
+    const closeButton = document.createElement('button');
+    closeButton.className = 'close-modal';
+    closeButton.textContent = 'close'; // You can customize the text or use an icon
+    
+    // Append the close button to the modal
+    document.body.appendChild(closeButton);
     
     // Append the modal to the body
     document.body.appendChild(descriptionModal);
 
     // Close the modal when the close button is clicked
-    const closeButton = descriptionModal.querySelector('.close-modal');
     closeButton.addEventListener('click', function() {
         descriptionModal.remove();
+        closeButton.style.display ='none'
     });
 }
-
