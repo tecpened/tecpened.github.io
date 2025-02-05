@@ -1,22 +1,22 @@
 function fetchProjects() {
     // Simulated data (you can replace this with an actual fetch request)
     const projectsData = [
-        { title: 'Project 1', image: './public/services/1.jpg', description: 'Description of Project 1' },
-        { title: 'Project 2', image: './public/services/2.jpg', description: 'Description of Project 2' },
-        { title: 'Project 1', image: './public/services/1.jpg', description: 'Description of Project 1' },
-        { title: 'Project 1', image: './public/services/1.jpg', description: 'Description of Project 1' },
-        { title: 'Project 3', image: './public/services/3.jpg', description: 'Description of Project 3' },
-        { title: 'Project 2', image: './public/services/2.jpg', description: 'Description of Project 2' },
-        { title: 'Project 2', image: './public/services/2.jpg', description: 'Description of Project 2' },
-        { title: 'Project 1', image: './public/services/1.jpg', description: 'Description of Project 1' },
-        { title: 'Project 3', image: './public/services/3.jpg', description: 'Description of Project 3' },
-        { title: 'Project 2', image: './public/services/2.jpg', description: 'Description of Project 2' },
-        { title: 'Project 1', image: './public/services/1.jpg', description: 'Description of Project 1' },
-        { title: 'Project 2', image: './public/services/2.jpg', description: 'Description of Project 2' },
-        { title: 'Project 2', image: './public/services/2.jpg', description: 'Description of Project 2' },
-        { title: 'Project 3', image: './public/services/3.jpg', description: 'Description of Project 3' },
-        { title: 'Project 3', image: './public/services/3.jpg', description: 'Description of Project 3' },
-        { title: 'Project 2', image: './public/services/2.jpg', description: 'Description of Project 2' },
+        { title: 'Project 1', image: './public/interior/1.png', description: 'Description of Project 1' },
+        { title: 'Project 2', image: './public/interior/2.png', description: 'Description of Project 2' },
+        { title: 'Project 1', image: './public/interior/3.png', description: 'Description of Project 1' },
+        { title: 'Project 1', image: './public/interior/4.png', description: 'Description of Project 1' },
+        { title: 'Project 3', image: './public/interior/5.png', description: 'Description of Project 3' },
+        { title: 'Project 2', image: './public/interior/6.png', description: 'Description of Project 2' },
+        { title: 'Project 2', image: './public/interior/2.png', description: 'Description of Project 2' },
+        { title: 'Project 1', image: './public/interior/1.png', description: 'Description of Project 1' },
+        { title: 'Project 3', image: './public/interior/3.png', description: 'Description of Project 3' },
+        { title: 'Project 2', image: './public/interior/2.png', description: 'Description of Project 2' },
+        { title: 'Project 1', image: './public/interior/1.png', description: 'Description of Project 1' },
+        { title: 'Project 2', image: './public/interior/4.png', description: 'Description of Project 2' },
+        { title: 'Project 2', image: './public/interior/5.png', description: 'Description of Project 2' },
+        { title: 'Project 3', image: './public/interior/6.png', description: 'Description of Project 3' },
+        { title: 'Project 3', image: './public/interior/1.png', description: 'Description of Project 3' },
+        { title: 'Project 2', image: './public/interior/2.png', description: 'Description of Project 2' },
     ];
 
     // Create the HTML content for projects
