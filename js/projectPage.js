@@ -32,33 +32,6 @@ const categoryDataMap = {
     photography: ''
 };
 
-// Set up content for each page
-const pageContent = {
-    company: {
-      heading: "Company",
-      title: "tecpen",
-      subtitle: "resonating in style!"
-    },
-    projects: {
-      heading: "Projects",
-      title: "ui/ux design",
-      categories: categoryDataMap,
-      subtitle: "Here are some of our projects."
-    },
-    services: {
-      heading: "Services",
-      title: "tecpen",
-      subtitle: "Explore our services here."
-    },
-    contact: {
-      heading: "Contact",
-      title: "tecpen",
-      subtitle: "Feel free to reach out to us."
-    }
-  };
-
-
-
 // Get all the required Ids and Divisions
 const navItems = document.querySelectorAll('.right .items h5');
 const sidebarHeading = document.getElementById('sidebar-heading');
@@ -87,20 +60,43 @@ navItems.forEach(item => {
       const page = item.textContent.trim().toLowerCase(); // Get the text content of the clicked item (company, projects, etc.)
       changeSidebarText(page); // Change the content based on the clicked page
     });
-  });
+});
+
 
 function displayCategories(categories) {
     projectCategories.innerHTML = ""; // Clear previous categories
     for (const category in categories) {
-      const categoryElement = document.createElement("h5");
-      categoryElement.textContent = category;
-      categoryElement.addEventListener('click', () => {
-        changeCategoryContent(category, categories[category]);
-        fetchProjects(category)
-      });
-      projectCategories.appendChild(categoryElement);
+        // Create the category element
+        const categoryElement = document.createElement("h6");
+        categoryElement.textContent = category;
+
+        // Initially set the opacity to 0 (invisible)
+        categoryElement.style.opacity = 0;
+        categoryElement.style.transition = "none"; // Disable any default transition
+
+        // Append the element to the DOM
+        projectCategories.appendChild(categoryElement);
+
+        // Function to animate the opacity (fade-in effect)
+        let opacity = 0;
+        const fadeIn = setInterval(() => {
+            opacity += 0.05; // Increment opacity
+            categoryElement.style.opacity = opacity;
+
+            // If opacity reaches 1, stop the animation
+            if (opacity >= 1) {
+                clearInterval(fadeIn);
+            }
+        }, 30); // Adjust the interval for smoother transition (e.g., 30ms per step)
+
+        // Add the click event listener
+        categoryElement.addEventListener('click', () => {
+            changeCategoryContent(category, categories[category]);
+            fetchProjects(category);
+        });
     }
-  }
+}
+
 
 function changeCategoryContent(category, content) {
     sidebarTitle.textContent = category; // Change sidebar heading to the category
@@ -108,7 +104,6 @@ function changeCategoryContent(category, content) {
 
 //Filtering and Projecting Data
 function fetchProjects(category) {
-
     // Get the corresponding data or an empty array if the category is not found
     let projectsData = categoryDataMap[category] || categoryDataMap["ui/ux"];
 
@@ -116,7 +111,7 @@ function fetchProjects(category) {
     let projectContent = '';
     projectsData.forEach((project, index) => {
         projectContent += `
-            <div class="project-item" data-index="${index}">
+            <div class="project-item" data-index="${index}" style="opacity: 0;">
                 <img src="${project.image}" alt="${project.title}" class="content-image">
             </div>
         `;
@@ -131,12 +126,31 @@ function fetchProjects(category) {
 
     // Add event listeners to each project item
     const projectItems = projectsDiv.querySelectorAll('.project-item');
+
+    // Animate each project item with a fade-in effect
     projectItems.forEach((item, index) => {
+        let opacity = 0;
+        item.style.transition = 'none'; // Disable default transition first to handle animation manually
+
+        // Start fade-in effect
+        const fadeIn = setInterval(() => {
+            opacity += 0.05; // Increment opacity
+            item.style.opacity = opacity;
+
+            // If opacity reaches 1, stop the animation
+            if (opacity >= 1) {
+                clearInterval(fadeIn);
+            }
+        }, 30); // Adjust the interval for smoother transition (30ms per step)
+
+        // Add a click event to each project item
         item.addEventListener('click', function() {
             showProjectDescription(projectsData[index]);
         });
     });
+
 }
+
 
 // Show the project description in a modal or a new section
 function showProjectDescription(project) {

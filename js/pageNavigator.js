@@ -1,6 +1,32 @@
 // Content Panel
 const contentArea = document.querySelector('.content');
 
+// Set up content for each page
+const pageContent = {
+    company: {
+      heading: "Company",
+      title: "tecpen",
+      subtitle: "resonating in style!"
+    },
+    projects: {
+      heading: "Projects",
+      title: "ui/ux design",
+      categories: categoryDataMap,
+      subtitle: "Here are some of our projects."
+    },
+    services: {
+      heading: "Services",
+      title: "tecpen",
+      subtitle: "Explore our services here."
+    },
+    contact: {
+      heading: "Contact",
+      title: "tecpen",
+      subtitle: "Feel free to reach out to us."
+    }
+  };
+
+
 function changeContent(newContent) {
     if(newContent.tagName == 'DIV'){
     contentArea.innerHTML = '';
@@ -10,6 +36,7 @@ function changeContent(newContent) {
     contentArea.innerHTML = newContent;
     } // Update the content
 }
+
 document.addEventListener('DOMContentLoaded', function() {
     const projectsBtn = document.getElementById('projects');
     const servicesBtn = document.getElementById('services');

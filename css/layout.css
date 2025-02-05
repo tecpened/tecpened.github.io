@@ -14,12 +14,18 @@
     gap: 20px;
 }
 
-
+.sidebar .top{
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    /* background-color: red; */
+}
 .sidebar #project-categories{
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    gap: 1rem;
+    gap: .5rem;
 
 }
 
