@@ -102,3 +102,17 @@
     left: 0;
     transform: translateX(10rem) translateY(-120rem);
 }
+
+@media (max-width: 1050px) {
+    .right{
+        width: 65vw;
+        justify-content: end;
+    }
+    .media{
+        display: none;
+    }
+    .items{
+        z-index: 100;
+    }
+   
+}

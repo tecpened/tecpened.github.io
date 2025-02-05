@@ -1,11 +1,8 @@
 .container {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-
-
+    gap: 5rem;
 }
-
 /* Left Sidebar */
 .sidebar {
     width: 25%; /* or any percentage based on your design */
@@ -13,7 +10,6 @@
     flex-direction: column;
     gap: 20px;
 }
-
 .sidebar .top{
     height: 25vh;
     display: flex;
@@ -55,4 +51,16 @@
     height: 300px; /* Maintain aspect ratio */
     object-fit: cover; /* This ensures images are cropped to fit the area without distorting their aspect ratio */
 
+}
+
+
+@media (max-width: 1050px) {
+    .container {
+        position: relative;
+        top: 20vw;
+        display: flex;
+        justify-content: space-between;
+        gap: 5rem;
+    }
+   
 }

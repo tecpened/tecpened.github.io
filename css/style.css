@@ -121,18 +121,7 @@ button{
 }
 
 @media (max-width: 1250px) {
-    .items{
-        display: none;
-    }
-    .main{
-        gap: 5rem;
-    }
 
-    .motto img {
-        width: auto;
-        height: 90vh; /* Maintain aspect ratio */
-    }
-    /* The Big Header */
     h1 {
         font-size: 32px;
 
