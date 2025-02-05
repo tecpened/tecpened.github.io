@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href="./css/navigation.css">
     <link rel='stylesheet' href="./css/style.css">
+    <link rel='stylesheet' href="./css/layout.css">
+    <link rel='stylesheet' href="./css/modal.css">
     <link rel='icon' href='./public/favicon/logo (3).png'>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -20,113 +22,55 @@
     <div class="navigation">
         <div class="left">
             <h4>
+               Q
+            </h4>
+            <h4>
                 tecpen.
             </h4>
             <!-- <h5>
                 resonating the future in style
             </h5> -->
         </div>
-        <div class="items">
-            <h5>About us</h5>
-            <h5>Provisions.</h5>
-            <h5>Contact us</h5>
-            <div class="theme-button">☼</div>
+        <div class="right">
+            <div class="items">
+                <h5 id="company">company</h5>
+                <h5 id="projects">projects</h5>
+                <h5 id="services">services</h5>
+                <h5 id="contact">contact</h5>
+            </div>
+    
+            <div class="media">
+                <h5>facebook</h5>
+                <h5>twitter</h5>
+                <h5>linkedin</h5>
+                <div class="theme-button">☼</div>
+            </div>
         </div>
-        <!-- ☾☼ 🌕 | 🌑-->
+        
     </div>
     <!-- Main Container  -->
-    <div class="main">
-        <!-- SECTION #1 - Hero Section contains image body on the left and text body on the right -->
-        <div class="motto">
-            <div class="mottotext">Resonating The Future In Style</div>
-            <img src="public/hero.png" alt="">
+
+    <div class="container">
+        <!-- Left Column (Sidebar) -->
+        <div class="sidebar">
+            <div class="row"><h2>Main Content</h2></div>
+            <div class="row"><h1>tecpen.</h2></div>
+            <div class="row"><h5>Main Content</h5></div>
         </div>
-
-        <!-- SECTION #2 - Icons and text -->
-        <div class="section_2">
-            <div class="container">
-                <div class="moral">
-                    </div>
-            </div>
+    
+        <!-- Right Column (Content) -->
+        <div class="content">
+            <h2>Main Content</h2>
+            <p>This is where the main content goes.</p>
         </div>
-
-        <div class="ourServices">
-            <div class="text">
-                <h1>
-                    Getting Nowhere With The Future
-                </h1>
-                <h4>
-                    Our Services
-                </h4>
-            </div>
-            <div class="services">
-                <!-- Image source -->
-            </div>
-            <p>
-                A team sketching the basics and developing the products maintaining the aesthetics rather than
-                the usual suspect.
-            </p>
-        </div>
-
-        <!-- SECTION #3 - Portfolio Showcase (Web Development, Interior Designs, etc) -->
-        <div class="provisions">
-            <div class="provision_right">
-            </div>
-        </div>
-
-        <!-- SECTION #4 - Meet The Team -->
-        <div class="Team">
-            <div class="team_left">
-                <div class="header">
-                    <h1>Meet the founders.</h1>
-                    <h4>The Sketchers of the Basic</h4>
-                </div>
-            </div>
-            <div class="team_right">
-            </div>
-        </div>
-
-        <div class="contact">
-            <!-- <img src="../public/favicon/tecpenlogo.svg"> -->
-                    <h3>tecpen.</h3> <p>envisions design and development in a distinct way, harnessing the next-gen design
-                    capability and producing jaw-dropping visuals<p>
-            <!-- <div class="contact_left">
-                <div class="header">
-                    <h2>
-                        Contact Us.
-                    </h2>
-                    <h4>
-                        just a wish away
-                    </h4>
-                </div>
-            </div> -->
-            <div class="contact_right">
-                <!-- <form id="Form">
-                    <h5>tecpen.</h5>
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="Description">Description</label>
-                    <textarea type="Description" id="Description" name="Description" rows="10" required></textarea>
-
-                    <button type="submit">Submit</button>
-                    <p id="responseMessage"></p>
-                </form> -->
-            </div>
-        </div>
-
     </div>
+    
+
 
     <script src="js/main.js"></script>
-    <script src="./js/section2.js"> </script>
-    <script src="js/provision.js"></script>
-    <script src="js/contact.js"></script>
-    <script src="js/team.js"></script>
-    <!-- <script type='module' src="js/three_container.js"></script> -->
+    <script src="js/pageNavigator.js"></script>
+    <script src="js/projectData.js"></script>
 
-    <script src="https://threejs.org/build/three.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
-    <!-- <script src = ./fork.js></script> -->
 </body>
 
 </html>

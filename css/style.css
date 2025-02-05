@@ -1,4 +1,17 @@
 :root{
+    --primary-color : #000000;
+    --secondary-color : #8F72E3;
+    --input-box : #E5E5E5;
+    --sidebar : darkgrey;
+    --rectangle : #101010;
+    --font : white;
+    --font_2 : white;
+    --shadow : rgb(0, 0, 0);
+    --title : 4vw;
+    --text : 1.5vw;
+}
+
+[data-theme='light'] {
     --primary-color: #F6F6F6;
     --secondary-color: #8F72E3;
     --sidebar: darkgrey;
@@ -13,26 +26,12 @@
     --text : 2rem; */
 }
 
-[data-theme='dark'] {
-    --primary-color : #1E1E1E;
-    --secondary-color : #8F72E3;
-    --input-box : #E5E5E5;
-    --sidebar : darkgrey;
-    --rectangle : #101010;
-    --font : white;
-    --font_2 : white;
-    --shadow : rgb(0, 0, 0);
-    --title : 4vw;
-    --text : 1.5vw;
-}
-
 html,body{
     background-color: var(--primary-color);
-    margin: 0%;
-    /* overflow: hidden; */
+    margin: 3%;
     font-family: 'Montserrat';
+    overflow: hidden;
 }
-
 
 ::-webkit-scrollbar{
     width: 2px;
@@ -44,27 +43,6 @@ html,body{
     background-color: var(--sidebar);
 }
 
-.rectangle{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 20rem;
-    background-color: var(--rectangle);
-    z-index: 0;
-}
-
-.main{
-    position: relative;
-    /* background-color: yellowgreen; */
-    /* margin-top: 8% !important; */
-    /* margin: 10%; */
-    display: flex;
-    /* flex-wrap: wrap; */
-    flex-direction: column;
-    align-items: center;
-    gap: 15rem;
-
-}
 h1, h2, h3, h4, h5, h6 p {
     margin: 0;
     padding: 0;
@@ -78,6 +56,7 @@ h1 {
     line-height: 1;
     font-weight: 700;
 }
+/* Breadcrumb */
 h2 {
     color: var(--font);
     font-size: .6vw;
@@ -115,272 +94,6 @@ p {
 }
 
 
-/* Hero Section */
-.motto{
-    margin-top: 4em;
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    /* padding: 40%; */
-    /* margin: 20% 20%; */
-    /* background-color: red; */
-    justify-content: center;
-    vertical-align: middle;
-    align-items: center;
-    align-self: center;
-}
-.motto img {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-}
-.mottotext {
-    position: absolute; /* Position text over the image */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to center */
-    text-align: center;
-    background: linear-gradient(to bottom, black 0%, black 50%, #8F72E3 50%, #8F72E3 100%);
-    background-clip: text;
-    color: white;
-    font-size: 5vw;
-    font-weight: 600;
-    pointer-events: none; /* Optional: Prevents text from blocking clicks */
-}
-
-/* 2nd Section */
-.container{
-    position: relative;
-    opacity: 100%;
-    border-radius: 1rem;
-    /* background-color: yellow; */
-    display: flex;
-    flex-direction: column;
-    gap: 0 rem;
-    justify-content: space-between;
-    /* align-items: center; */
-    /* flex-wrap: wrap; */
-}
-.groups{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    /* width: 50rem; */
-    justify-content: center;
-    gap: rem;
-}
-.group1, .group2, .group3, .group4, .group5{
-    display: flex;
-    flex-direction: row;
-    /* padding: 2rem; */
-    width: 12vw;
-    height: 8rem;
-    min-width: 12rem;
-    gap: 1rem;
-    /* background-color: var(--primary-color); */
-    border-radius: 2rem;
-    /* box-shadow: 0rem 0rem .2rem 0.0rem var(--shadow); */
-    transition: .5s ease-in-out;
-    justify-content: center;
-}
-.group1:hover, .group2:hover, .group3:hover, .group4:hover, .group5:hover {
-    width: 12rem;
-    height: 9rem;
-    transition: .5s ease-in-out;
-    /* box-shadow: 0rem 0rem .5rem 0.0rem var(--secondary-color); */
-}
-.groups img{
-    position: relative;
-    background-color: var(--rectangle);
-    padding: 1rem;
-    height: 1rem;
-    width: 1rem;
-    border-radius: 10rem;
-}
-
-/* Service Section: Includes Image and a text Body */
-.ourServices{
-    /* margin-bottom: 10%; */
-    /* background-color: rgb(97, 70, 218); */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vw;
-    overflow: hidden;
-}
-.text{
-    display: flex;
-    position: relative;
-    /* padding: 0% 10%; */
-    gap: .5rem;
-    margin: 0rem 5rem;
-    /* background-color: green; */
-    /* display: flex-end; */
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.services{
-    /* background-color: var(--secondary-color); */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    /* gap: 1rem; */
-    /* box-shadow: 0rem 0rem 10rem 1rem var(--secondary-color); */
-    /* box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.5); */
-}
-.service0, .service1, .service2{
-    position: relative;
-    display: flex;
-    width: 30rem;
-    min-width: 22rem;
-    height: 35rem;
-    justify-content: end;
-    transition: ease-in-out .2s;
-    font-size: 1rem;
-    overflow: hidden;
-}
-.service0:hover, .service1:hover, .service2:hover{
-    box-shadow: 0rem 0rem 1rem .5rem var(--shadow);
-    transition: ease-in-out .5s;
-}
-.services::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.315), rgba(0, 0, 0, 0.5)); /* Adjust colors and opacity as needed */
-    z-index: 1; /* Ensure the gradient sits on top of the image */
-    pointer-events: none; /* Optional: Prevents text from blocking clicks */
-}
-.services img {
-    position: relative;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.3s ease;
-}
-.services img:hover {
-    transform: scale(1.1);
-}
-.services h4{
-    position: absolute;
-    color: white;
-    z-index: 100;
-    top: 85%;
-    text-align: center;
-    padding: 1.5rem 2rem;
-    width: 10rem;
-    background-color: var(--secondary-color);
-    transition: ease-in-out .2s;
-}
-.service0:hover h4, .service1:hover h4, .service2:hover h4 {
-    font-size: .7rem; /* Increase font size on hover */
-    transition: font-size 0.5s ease-in-out; /* Smooth transition for font size */
-}
-.ourServices p{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 5rem 5rem;
-}
-
-
-
-/* 4rd Section */
-.provisions {
-    /* background-color: red; */
-    position: relative;
-    width: 100%;
-    /* margin: 5%; */
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.provision_right{
-    overflow-x: scroll;
-    scroll-behavior:smooth;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 35rem;
-    /* background-color: red; */
-}
-.provision_right img{
-    min-width:auto;
-    width: 100%;
-    height: 100%;
-}
-
-
-/* Team Section */
-.Team{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    /* background-color: red; */
-}
-.team_left .header{
-    gap: .5rem;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    align-items: center;
-    justify-content: center;
-    /* background-color: blue; */
-}
-.team_right{
-    display: flex;
-    flex-direction: wrap;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    width: 100%;
-}
-.Team img{
-    width: 18rem;
-    min-width: 10rem;
-}
-
-/* Contact Us Section */
-.contact{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: red; */
-    /* justify-content: space-between; */
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    /* gap: 1.5rem; */
-    margin-bottom: 15%;
-    padding: 0rem 2rem;
-    text-align: center;
-}
-.contact_right{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
-}
-.contact_right img{
-    /* display: flex; */
-    width: 4rem;
-    box-shadow: 0rem 0rem .2rem 0.0rem var(--shadow);
-    border-radius: 100%;
-    transition: .5s ease-in-out;
-}
 button{
     margin-top: 1rem;
     padding: .8rem;
@@ -388,18 +101,6 @@ button{
     padding-right: 1.5rem;
     width: auto;
     font-size: 1vw;
-}
-.ContactButton{
-    background-color: var(--primary-color);
-    border-color: var(--font);
-    color: var(--font);
-    border: solid 1px;
-}
-.ScheduleButton{
-    background-color: var(--font);
-    border: none;
-    color: var(--primary-color);
-    /* align-self: flex-start; */
 }
 
 @media (max-width: 1250px) {

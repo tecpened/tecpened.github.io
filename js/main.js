@@ -5,14 +5,12 @@
 
 const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', newTheme);
 };
 
 // Example: Adding an event listener to a button
 document.querySelector('.theme-button').addEventListener('click', toggleTheme);
-
-
 
 
 // // Function to update height and width

@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+
+}
+
+/* Left Sidebar */
+.sidebar {
+    width: 25%; /* or any percentage based on your design */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+/* Each row in the sidebar */
+.sidebar .row {
+    /* background-color: red; */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Right Content Column */
+.content {
+    /* margin-left: 23vw ; */
+    width: 100vw; 
+    padding: 20px;
+    /* background-color: red; */
+    height: 80vh;
+    overflow: scroll;
+
+
+
+}
+.projectsDiv{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+
+
+}
+.content-image {
+    width: 100%;  /* Ensures the image spans the width of its container */
+    max-width: 300px; /* Maximum width for each image */
+    height: 200px; /* Maintain aspect ratio */
+    object-fit: cover; /* This ensures images are cropped to fit the area without distorting their aspect ratio */
+
+}
