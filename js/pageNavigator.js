@@ -2,7 +2,7 @@
 const contentArea = document.querySelector('.content');
 
 // Set up content for each page
-const pageContent = {
+const sidebarContent = {
     company: {
       heading: "Company",
       title: "tecpen",
@@ -26,7 +26,6 @@ const pageContent = {
     }
   };
 
-
 function changeContent(newContent) {
     if(newContent.tagName == 'DIV'){
     contentArea.innerHTML = '';
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     servicesBtn.addEventListener('click', function() {
-        changeContent('<h2>Services Section</h2><p>Here you will find the various services we offer.</p>');
+      displayServices();
     });
 
     companyBtn.addEventListener('click', function() {
@@ -61,3 +60,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Get all the required Ids and Divisions
+const sidebarHeading = document.getElementById('sidebar-heading');
+const sidebarTitle = document.getElementById('sidebar-title');
+const sidebarSubtitle = document.getElementById('sidebar-subtitle');
+
+//Sidebar Information
+function changeSidebarText(page) {
+  sidebarHeading.textContent = `${sidebarContent[page].heading}`;
+  sidebarTitle.textContent = `${sidebarContent[page].title}`;
+  sidebarSubtitle.textContent = `${sidebarContent[page].subtitle}`;
+
+  // If the page is "projects", show the categories under it
+  if (page === "projects") {
+      displayCategories(sidebarContent.projects.categories);
+  }
+  else {
+      // bottomSidebar.innerHTML = ""; // Hide categories if not "projects"
+      checkPage(page);
+  }
+}
+
+const navItems = document.querySelectorAll('.right .items h5');
+
+navItems.forEach(item => {
+  item.addEventListener('click', function () {
+    const page = item.textContent.trim().toLowerCase(); // Get the text content of the clicked item (company, projects, etc.)
+    changeSidebarText(page); // Change the content based on the clicked page
+  });
+});

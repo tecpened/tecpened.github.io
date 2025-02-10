@@ -1,27 +1,27 @@
 //Sidebar
 const uiData = [
-    { title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-    { title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-    { title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-    { title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-    { title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-    { title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
+    { icons:'c,c,c', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
+    { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
+    { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
+    { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
+    { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
+    { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
 ];
 const webData = [
-    { title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
-    { title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
-    { title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
-    { title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
-    { title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
-    { title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
+    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
+    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
+    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
+    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
+    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
+    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
 ];
 const animData = [
-    { title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
-    { title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
-    { title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
-    { title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
-    { title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
-    { title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
+    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
+    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
+    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
+    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
+    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
+    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
 ];
 
 const categoryDataMap = {
@@ -33,11 +33,9 @@ const categoryDataMap = {
 };
 
 // Get all the required Ids and Divisions
-const navItems = document.querySelectorAll('.right .items h5');
-const sidebarHeading = document.getElementById('sidebar-heading');
-const sidebarTitle = document.getElementById('sidebar-title');
-const sidebarSubtitle = document.getElementById('sidebar-subtitle');
 
+// const container = document.querySelector('.container');
+const contents = document.querySelector('.content');
 const bottomSidebar = document.getElementById('bottom');
 
 // Function to check page name
@@ -53,28 +51,8 @@ function checkPage(page){
     }
 }
 // Function to change the content
-function changeSidebarText(page) {
-    sidebarHeading.textContent = `${pageContent[page].heading}`;
-    sidebarTitle.textContent = `${pageContent[page].title}`;
-    sidebarSubtitle.textContent = `${pageContent[page].subtitle}`;
-
-    // If the page is "projects", show the categories under it
-    if (page === "projects") {
-        displayCategories(pageContent.projects.categories);
-    }
-    else {
-        // bottomSidebar.innerHTML = ""; // Hide categories if not "projects"
-        checkPage(page);
-    }
-}
 
 // Add event listeners to each nav item
-navItems.forEach(item => {
-    item.addEventListener('click', function () {
-      const page = item.textContent.trim().toLowerCase(); // Get the text content of the clicked item (company, projects, etc.)
-      changeSidebarText(page); // Change the content based on the clicked page
-    });
-});
 
 
 function displayCategories(categories) {
@@ -105,92 +83,75 @@ function displayCategories(categories) {
 
         // Add the click event listener
         categoryElement.addEventListener('click', () => {
-            changeCategoryContent(category, categories[category]);
+            changeCategoryText(category, categories[category]);
             fetchProjects(category);
+            // contents.innerHTML = '';
         });
     }
 }
 
-
-function changeCategoryContent(category, content) {
+// Function that changes category name at the top left
+function changeCategoryText(category, content) {
     sidebarTitle.textContent = category; // Change sidebar heading to the category
 }
 
-const container = document.querySelector('.container');
-//Filtering and Projecting Data
 function fetchProjects(category) {
+    
+    contents.innerHTML = '';
     // Get the corresponding data or an empty array if the category is not found
     let projectsData = categoryDataMap[category] || categoryDataMap["ui/ux"];
 
-    // Create the HTML content for projects
-    let projectContent = '';
+
+    // Create the HTML content for projects and animate them
     projectsData.forEach((project, index) => {
-        projectContent += `
-            <div class="project-item" data-index="${index}" style="opacity: 0;">
-                <img src="${project.image}" alt="${project.title}" class="content-image">
-            </div>
-        `;
-    });
 
-    const projectsDiv = document.createElement('div');
-    projectsDiv.className = 'projectsDiv';
-    projectsDiv.innerHTML = projectContent;  // Add the content to the div
+        const projectItem = document.createElement('div');
+        projectItem.className = 'project-item';
+        projectItem.dataset.index = index;
+        projectItem.style.opacity = '0';
+    
+        const projectInfo = document.createElement('div');
+        projectInfo.className = 'project-info';
 
-    // Change the content with a smooth fade
-    changeContent(projectsDiv);
+        // Create the image element and append it to the left column
+        const projectImage = document.createElement('img');
+        projectImage.src = project.image;
+        projectImage.alt = project.title;
+        projectImage.className = 'content-image';
 
-    // Add event listeners to each project item
-    const projectItems = projectsDiv.querySelectorAll('.project-item');
+        // Create the project category element and append it to the left column
+        const projectCategory = document.createElement('h');
+        projectCategory.id = 'tag'
+        projectCategory.textContent = project.category; // Assuming the category is part of the project data
+        projectInfo.appendChild(projectCategory);
 
-    // Animate each project item with a fade-in effect
-    projectItems.forEach((item, index) => {
-        let opacity = 0;
-        item.style.transition = 'none'; // Disable default transition first to handle animation manually
+        // Create the project title element and append it to the left column
+        const projectTitle = document.createElement('h');
+        projectTitle.textContent = project.title;
+        projectInfo.appendChild(projectTitle);
+
+        // Create the project description element and append it to the left column
+        const projectDescription = document.createElement('h');
+        projectDescription.textContent = project.description; // Assuming the description is part of the project data
+        projectInfo.appendChild(projectDescription);
+
+        // Create the project icons element and append it to the left column
+        const projectIcons = document.createElement('div');
+        projectIcons.className = 'icons';
+        projectIcons.textContent = project.icons; // Assuming the icons are part of the project data
+        projectInfo.appendChild(projectIcons);
+    
+        projectItem.appendChild(projectInfo);
+        projectItem.appendChild(projectImage);
+
+        contents.appendChild(projectItem);
+
+        // Animate each project item with a fade-in effect
+        projectItem.style.transition = '0.8s'; // Adding smooth transition
 
         // Start fade-in effect
-        const fadeIn = setInterval(() => {
-            opacity += 0.05; // Increment opacity
-            item.style.opacity = opacity;
-
-            // If opacity reaches 1, stop the animation
-            if (opacity >= 1) {
-                clearInterval(fadeIn);
-            }
-        }, 30); // Adjust the interval for smoother transition (30ms per step)
-
-        // Add a click event to each project item
-        item.addEventListener('click', function() {
-            showProjectDescription(projectsData[index]);
-            container.style.filter = 'blur(10px)';
-        });
-    });
-
-}
-
-function showProjectDescription(project) {
-    // Create a modal or description box
-    const descriptionModal = document.createElement('div');
-    descriptionModal.className = 'description-modal';
-    descriptionModal.innerHTML = `
-        <img src="${project.image}" alt="${project.title}">
-        <h2>${project.title}</h2>
-        <p>${project.description}</p>
-    `;
-    // Create the close button
-    const closeButton = document.createElement('button');
-    closeButton.className = 'close-modal';
-    closeButton.textContent = 'close'; // You can customize the text or use an icon
-    
-    // Append the close button to the modal
-    document.body.appendChild(closeButton);
-    
-    // Append the modal to the body
-    document.body.appendChild(descriptionModal);
-
-    // Close the modal when the close button is clicked
-    closeButton.addEventListener('click', function() {
-        descriptionModal.remove();
-        closeButton.style.display ='none';
-        container.style.filter = 'blur(0px)';
+        setTimeout(() => {
+            projectItem.style.opacity = '1';
+        }, 100 * index); // Delay based on index for staggered effect
     });
 }
