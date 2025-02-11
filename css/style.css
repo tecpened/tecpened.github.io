@@ -37,7 +37,7 @@ html, body{
     width: 10rem;  /* Size of the contour circle */
     height: 10rem;
     border-radius: 50%;
-    background-color: rgb(116, 23, 179);  /* Dark contour */
+    background-color: rgb(220, 205, 241);  /* Dark contour */
     pointer-events: none;  /* Prevent it from interfering with other elements */
     transition: transform 0.5s ease-out;
     z-index: 9999;

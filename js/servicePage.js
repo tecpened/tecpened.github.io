@@ -47,6 +47,3 @@ function displayServices() {
         }, 100 * index);  // Delay based on index for staggered effect
     });
 }
-
-// Call the displayServices function to render the services
-displayServices();

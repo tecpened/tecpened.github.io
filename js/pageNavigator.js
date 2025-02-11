@@ -65,6 +65,19 @@ const sidebarHeading = document.getElementById('sidebar-heading');
 const sidebarTitle = document.getElementById('sidebar-title');
 const sidebarSubtitle = document.getElementById('sidebar-subtitle');
 
+// Check Page Type
+function checkPage(page){
+  if(page == "company"){
+      bottomSidebar.innerHTML = "company profile";
+  }
+  else if(page == "services"){
+      bottomSidebar.innerHTML = "services";
+  }
+  else{
+      bottomSidebar.innerHTML = "contact";
+  }
+}
+
 //Sidebar Information
 function changeSidebarText(page) {
   sidebarHeading.textContent = `${sidebarContent[page].heading}`;

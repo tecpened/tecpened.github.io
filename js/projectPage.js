@@ -38,22 +38,6 @@ const categoryDataMap = {
 const contents = document.querySelector('.content');
 const bottomSidebar = document.getElementById('bottom');
 
-// Function to check page name
-function checkPage(page){
-    if(page == "company"){
-        bottomSidebar.innerHTML = "company profile";
-    }
-    else if(page == "services"){
-        bottomSidebar.innerHTML = "services";
-    }
-    else{
-        bottomSidebar.innerHTML = "contact";
-    }
-}
-// Function to change the content
-
-// Add event listeners to each nav item
-
 
 function displayCategories(categories) {
     bottomSidebar.innerHTML = ""; // Clear previous categories
