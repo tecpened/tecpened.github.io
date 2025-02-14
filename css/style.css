@@ -60,6 +60,13 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
     font-weight: 400;
 }
+a{
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+}
 /* The Big Header */
 h1 {
     color: var(--font);
@@ -120,7 +127,8 @@ h5:hover {
 h6{
     padding: clamp(0.5rem, 1.3rem, 1.3rem);
     border-radius: .5rem;
-    font-size: clamp(0.5rem,0.75rem, 0.75rem);
+    /* font-size: clamp(0.5rem,0.75rem, 0.75rem); */
+    font-size: 10px;
     font-weight: 400;
     background-color: var(--shadow);
     color: var(--font);

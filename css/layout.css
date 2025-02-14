@@ -37,7 +37,7 @@
     border: solid 1px var(--font);
     color: var(--font);
     overflow-x: scroll;
-
+    font-size: 10px;
 }
 
 /* Right Content Column */
