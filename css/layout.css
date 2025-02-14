@@ -125,7 +125,7 @@
         margin-bottom: 0rem;
     }
 
-    .sidebar #bottom::before {
+    /* .sidebar #bottom::before {
         content: '';
         width: 75vh;
         height: 6vh;
@@ -144,7 +144,7 @@
         position: absolute;
         top: 12rem;
         left: -5rem;
-    }
+    } */
 
     .sidebar #bottom{
         flex-direction: row;
