@@ -45,6 +45,19 @@ html, body{
     filter: blur(2rem);
 }
 
+/* Background Image */
+
+.gridImage {
+    position: absolute;
+    z-index: 0;
+    opacity: 4%;  /* Start with the grid invisible */
+    transition: opacity 0.2s ease-in-out;
+    width: 100%; /* Image size to match the cursor */
+    filter: grayscale(100%) invert(100%); 
+    mix-blend-mode: screen;
+    
+}
+
 ::-webkit-scrollbar{
     width: 1px;
     height: 0px;

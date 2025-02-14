@@ -15,7 +15,6 @@ document.querySelector('.theme-button').addEventListener('click', toggleTheme);
 /////////////////////Cursor Effect///////////////////
 
 // Create the cursor contour element dynamically
-// Create the cursor contour element dynamically
 const contour = document.createElement('div');
 contour.classList.add('cursor-contour');
 document.body.appendChild(contour);
@@ -50,16 +49,3 @@ document.addEventListener('mousemove', (e) => {
 
 // Start the smooth update loop
 updateContourPosition();
-
-
-// // Function to update height and width
-// function updateSize() {
-//     height.innerHTML = window.innerHeight;
-//     width.innerHTML = window.innerWidth;
-// }
-
-// // Add event listener for window resize
-// window.addEventListener('resize', updateSize);
-
-// // Initial update
-// updateSize();
