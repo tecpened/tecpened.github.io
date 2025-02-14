@@ -1,4 +1,5 @@
 import { init3DScene } from './tecpen3D.js';
+import { tecpen } from './tecpen3D.js';
 // Content Panel
 const contentArea = document.querySelector('.content');
 // init3DScene(contentArea);
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     companyBtn.addEventListener('click', function() {
       const HomeContainer = document.querySelector('.content');
       HomeContainer.innerHTML='';
+      tecpen();
       init3DScene(HomeContainer);
     });
 

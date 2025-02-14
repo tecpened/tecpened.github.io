@@ -7,7 +7,7 @@
     height: 20rem;
     width: 20rem;
     border-radius: 100%;
-    opacity: 50%;
+    opacity: 40%;
     z-index: 0;
     mix-blend-mode: color-dodge;
     transition: .5s;
@@ -41,7 +41,7 @@
     90% {
         top: 10rem;
         left: 60rem;
-        background-color: rgb(218, 33, 73);
+        background-color: rgb(233, 147, 36);
     }
     100% {
         top: 8rem;

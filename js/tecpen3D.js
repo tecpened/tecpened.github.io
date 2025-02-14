@@ -20,7 +20,7 @@ export function init3DScene(canvas) {
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true});
     canvas.appendChild(renderer.domElement);
 
-    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    renderer.setSize(canvas.clientWidth *0.6, canvas.clientHeight *0.9);
     renderer.gammaOutput = true;
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Soft shadows
@@ -89,3 +89,31 @@ export function init3DScene(canvas) {
         canvas.style.opacity = 1; // Set opacity to 1 after 1 second
     }, 1000); // Adjust time for desired delay
 }
+
+const profile = {
+    title: 'following',
+    motto: '"Not letting you quit, until we make you a brand"',
+    detail: 'Looking to grow your business and connect with more customers? Tecpen is your digital gateway, offering cutting-edge solutions like dynamic websites, 3D content and animations, digital marketing, software solutions, and social media management to elevate your brand. Think of us as your Wizard of Oz, guiding you through the digital world with innovative strategies that enhance visibility, engagement, and efficiency. Whether you need a stunning online presence, immersive product modeling, or data-driven marketing, we’ve got you covered. Let’s build something extraordinary together! Get Started Today'
+}
+
+export function tecpen(){
+    const HomeContainer = document.querySelector('.content');
+    const information = document.createElement('div')
+    information.className = 'information'
+    const title = document.createElement('h4')
+    title.textContent = `${profile.title}`
+    information.appendChild(title);
+
+    const motto = document.createElement('h1')
+    motto.textContent = `${profile.motto}`
+    information.appendChild(motto);
+
+    const detail = document.createElement('p')
+    detail.textContent = `${profile.detail}`
+    information.appendChild(detail);
+
+    HomeContainer.appendChild(information)
+}
+
+
+
