@@ -1,10 +1,12 @@
+import { init3DScene } from './tecpen3D.js';
 // Content Panel
 const contentArea = document.querySelector('.content');
+// init3DScene(contentArea);
 
 // Set up content for each page
 const sidebarContent = {
-    company: {
-      heading: "Company",
+  home: {
+      heading: "Home",
       title: "tecpen",
       subtitle: "resonating in style!"
     },
@@ -27,7 +29,7 @@ const sidebarContent = {
   };
 
 function changeContent(newContent) {
-    if(newContent.tagName == 'DIV'){
+    if(newContent.tagName == 'DIV') {
     contentArea.innerHTML = '';
     contentArea.appendChild(newContent);
     }
@@ -39,7 +41,7 @@ function changeContent(newContent) {
 document.addEventListener('DOMContentLoaded', function() {
     const projectsBtn = document.getElementById('projects');
     const servicesBtn = document.getElementById('services');
-    const companyBtn = document.getElementById('company');
+    const companyBtn = document.getElementById('home');
     const contactBtn = document.getElementById('contact');
 
     // Event listeners for navigation items
@@ -52,7 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     companyBtn.addEventListener('click', function() {
-        changeContent('<h2>Company Section</h2><p>Learn more about our company history and values.</p>');
+      const HomeContainer = document.querySelector('.content');
+      HomeContainer.innerHTML='';
+      init3DScene(HomeContainer);
     });
 
     contactBtn.addEventListener('click', function() {
@@ -67,7 +71,7 @@ const sidebarSubtitle = document.getElementById('sidebar-subtitle');
 
 // Check Page Type
 function checkPage(page){
-  if(page == "company"){
+  if(page == "home"){
       bottomSidebar.innerHTML = "company profile";
   }
   else if(page == "services"){
