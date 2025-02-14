@@ -124,10 +124,32 @@
         flex-direction: column;
         margin-bottom: 0rem;
     }
+
+    .sidebar #bottom::before {
+        content: '';
+        width: 75vh;
+        height: 6vh;
+        border-radius: 100%;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        top: 7rem;
+        left: -5rem;
+    }
+    .sidebar #bottom::after {
+        content: '';
+        width: 75vh;
+        height: 6vh;
+        border-radius: 100%;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        top: 12rem;
+        left: -5rem;
+    }
+
     .sidebar #bottom{
         flex-direction: row;
         width: 80vw;
-        overflow-x:scroll
+        overflow-x: scroll
         /* height: auto; */
     }
 
