@@ -1,141 +1,104 @@
-//Sidebar
-const uiData = [
-    { icons:'c,c,c', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-    { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-    { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-    { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-    { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-    { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-];
-const webData = [
-    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
-    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
-    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
-    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
-    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
-    { icons:'', title: 'Project 2', category: 'web', image: './public/interior/2.png', description: 'Description of Project 2' },
-];
-const animData = [
-    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
-    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
-    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
-    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
-    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
-    { icons:'', title: 'Project 3', category: 'animation', image: './public/interior/3.png', description: 'Description of Project 3' },
-];
-
-const categoryDataMap = {
-    "ui/ux": uiData,
-    "web development": webData,
-    animation: animData,
-    video: '',
-    photography: ''
-};
-
-// Get all the required Ids and Divisions
 
 // const container = document.querySelector('.container');
-const contents = document.querySelector('.content');
-const bottomSidebar = document.getElementById('bottom');
+const projectsContainer = document.querySelector('.content');
+const sidebarTitle = document.getElementById('sidebar-title');
 
-
+// const bottomBar = document.getElementById('bottom');
+// Function to display categories
 function displayCategories(categories) {
-    bottomSidebar.innerHTML = ""; // Clear previous categories
-    for (const category in categories) {
-        // Create the category element
+    const bottomBar = document.createElement('div');
+    bottomBar.className = 'bottom';
+    projectsContainer.appendChild(bottomBar);
+
+    // Loop through categories and create category elements
+    Object.keys(categories).forEach(category => {
         const categoryElement = document.createElement("h6");
         categoryElement.textContent = category;
 
-        // Initially set the opacity to 0 (invisible)
-        categoryElement.style.opacity = 0;
-        categoryElement.style.transition = "none"; // Disable any default transition
-
-        // Append the element to the DOM
-        bottomSidebar.appendChild(categoryElement);
-
-        // Function to animate the opacity (fade-in effect)
-        let opacity = 0;
-        const fadeIn = setInterval(() => {
-            opacity += 0.05; // Increment opacity
-            categoryElement.style.opacity = opacity;
-
-            // If opacity reaches 1, stop the animation
-            if (opacity >= 1) {
-                clearInterval(fadeIn);
-            }
-        }, 30); // Adjust the interval for smoother transition (e.g., 30ms per step)
-
-        // Add the click event listener
-        categoryElement.addEventListener('click', () => {
-            changeCategoryText(category, categories[category]);
+        // Append to the bottomBar and add click event to fetch projects
+        bottomBar.appendChild(categoryElement);
+        categoryElement.addEventListener('click', function(){
             fetchProjects(category);
-            // contents.innerHTML = '';
-        });
-    }
+            changeCategoryText(category)
+})
+
+        // Fade-in effect for categories
+        // setTimeout(() => categoryElement.style.opacity = 1, 10);
+    });
 }
 
-// Function that changes category name at the top left
-function changeCategoryText(category, content) {
-    sidebarTitle.textContent = category; // Change sidebar heading to the category
+// Function to change the sidebar title
+function changeCategoryText(category) {
+    sidebarTitle.textContent = category; // Change the sidebar title
 }
 
+// Function to fetch and display projects for a selected category
 function fetchProjects(category) {
-    
-    contents.innerHTML = '';
-    // Get the corresponding data or an empty array if the category is not found
-    let projectsData = categoryDataMap[category] || categoryDataMap["ui/ux"];
+    // Clear existing projects before displaying new ones
+    projectsContainer.innerHTML = '';
+    // Re-display categories after clearing
 
+    const projectsData = categoryDataMap[category] || categoryDataMap["ui/ux"]; // Fallback to default category
+    const projects = document.createElement('div');
+    projects.className = 'projects';
+    projectsContainer.appendChild(projects);
 
-    // Create the HTML content for projects and animate them
+    // Loop through each project in the selected category and create project items
     projectsData.forEach((project, index) => {
-
         const projectItem = document.createElement('div');
         projectItem.className = 'project-item';
-        projectItem.dataset.index = index;
-        projectItem.style.opacity = '0';
-    
-        const projectInfo = document.createElement('div');
-        projectInfo.className = 'project-info';
+        projectItem.style.opacity = 0;
 
-        // Create the image element and append it to the left column
+        // Create and append project image and info
         const projectImage = document.createElement('img');
         projectImage.src = project.image;
         projectImage.alt = project.title;
         projectImage.className = 'content-image';
 
-        // Create the project category element and append it to the left column
+        const projectInfo = document.createElement('div');
+        projectInfo.className = 'project-info';
+
         const projectCategory = document.createElement('h');
-        projectCategory.id = 'tag'
-        projectCategory.textContent = project.category; // Assuming the category is part of the project data
+        projectCategory.textContent = project.category;
         projectInfo.appendChild(projectCategory);
 
-        // Create the project title element and append it to the left column
         const projectTitle = document.createElement('h');
         projectTitle.textContent = project.title;
         projectInfo.appendChild(projectTitle);
 
-        // Create the project description element and append it to the left column
         const projectDescription = document.createElement('h');
-        projectDescription.textContent = project.description; // Assuming the description is part of the project data
+        projectDescription.textContent = project.description;
         projectInfo.appendChild(projectDescription);
 
-        // Create the project icons element and append it to the left column
         const projectIcons = document.createElement('div');
         projectIcons.className = 'icons';
-        projectIcons.textContent = project.icons; // Assuming the icons are part of the project data
+        projectIcons.textContent = project.icons;
         projectInfo.appendChild(projectIcons);
-    
+
+        // Append project info and image
         projectItem.appendChild(projectInfo);
         projectItem.appendChild(projectImage);
+        projects.appendChild(projectItem);
 
-        contents.appendChild(projectItem);
-
-        // Animate each project item with a fade-in effect
+        // Add fade-in effect to each project
         projectItem.style.transition = '0.8s'; // Adding smooth transition
-
-        // Start fade-in effect
-        setTimeout(() => {
-            projectItem.style.opacity = '1';
-        }, 100 * index); // Delay based on index for staggered effect
+        setTimeout(() => projectItem.style.opacity = 1, 100 * index); // Staggered fade-in effect
     });
+
+    displayCategories(sidebarContent.projects.categories); 
 }
+
+
+// Fetch initial data for the home or default category (e.g., "ui/ux")
+function initPage() {
+    const initialCategory = 'ui/ux'; // Default category
+    fetchProjects(initialCategory);
+    changeCategoryText(initialCategory); // Change sidebar title
+}
+
+// Call this function to initialize the page when it's loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Trigger initial data fetch and display
+    // initPage();
+    
+});

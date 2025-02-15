@@ -8,11 +8,16 @@ const servicesData = [
 ];
 
 // Get the required elements
-const servicesContainer = document.querySelector('.content');  // Assuming you have a container for services
+const content = document.querySelector('.content');  // Assuming you have a container for services
+
+
 
 // Function to display the services
 function displayServices() {
-    servicesContainer.innerHTML = '';  // Clear previous content
+    content.innerHTML = '';  // Clear previous content
+    const servicesContainer = document.createElement('div');  
+    servicesContainer.className = 'services'
+    content.appendChild(servicesContainer)
 
     servicesData.forEach((service, index) => {
         // Create the service item container

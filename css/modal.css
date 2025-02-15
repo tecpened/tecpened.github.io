@@ -11,6 +11,7 @@
     z-index: 0;
     mix-blend-mode: color-dodge;
     transition: .5s;
+    pointer-events: none;
     
     /* Slower and smoother animation */
     animation: moveEffect 12s ease-in-out infinite; /* Slower by increasing the duration */
