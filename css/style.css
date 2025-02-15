@@ -52,9 +52,12 @@ html, body{
     z-index: 0;
     opacity: 4%;  /* Start with the grid invisible */
     transition: opacity 0.2s ease-in-out;
-    width: 100%; /* Image size to match the cursor */
+    width: 100vw;
+    height: 100vh;
     filter: grayscale(100%) invert(100%); 
     mix-blend-mode: screen;
+
+
     
 }
 
