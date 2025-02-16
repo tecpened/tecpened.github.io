@@ -1,3 +1,35 @@
+/* .gridImage {
+    position: fixed;
+    background-color: red;
+    z-index: 0;
+    opacity: 10%; 
+    transition: opacity 0.2s ease-in-out;
+    width: 100vw;
+    left: 0rem;
+
+    filter: grayscale(100%) invert(100%); 
+    mix-blend-mode: screen;
+    object-fit: fill;
+} */
+.gridImage {
+    position: fixed;
+    z-index: 0;
+    opacity: 8%;  /* Start with the grid invisible */
+    transition: opacity 0.2s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    left: 0rem;
+    filter: grayscale(100%) invert(100%); 
+    mix-blend-mode: screen;
+    object-fit: fill;
+    
+    /* Add radial gradient to blend edges */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.7) 100%), red;
+    pointer-events: none;
+}
+
+
+
 /* Container */
 .container {
     position: relative;
@@ -151,6 +183,10 @@ canvas{
 }
 
 @media (max-width: 1050px) {
+    .gridImage {
+        width: 500vw;
+        height: 100vh;
+    }
     .container {
         gap: 0rem;
         flex-direction: column;

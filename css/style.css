@@ -33,7 +33,7 @@ html, body{
 
 /* Add styles for the mouse contour effect */
 .cursor-contour {
-    position: absolute;
+    position: fixed;
     width: 10rem;  /* Size of the contour circle */
     height: 10rem;
     border-radius: 50%;
@@ -46,20 +46,6 @@ html, body{
 }
 
 /* Background Image */
-
-.gridImage {
-    position: absolute;
-    z-index: 0;
-    opacity: 4%;  /* Start with the grid invisible */
-    transition: opacity 0.2s ease-in-out;
-    width: 100vw;
-    height: 100vh;
-    filter: grayscale(100%) invert(100%); 
-    mix-blend-mode: screen;
-
-
-    
-}
 
 ::-webkit-scrollbar{
     width: 1px;
