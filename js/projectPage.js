@@ -58,15 +58,15 @@ function fetchProjects(category) {
         const projectInfo = document.createElement('div');
         projectInfo.className = 'project-info';
 
-        const projectCategory = document.createElement('h');
+        const projectCategory = document.createElement('h4');
         projectCategory.textContent = project.category;
         projectInfo.appendChild(projectCategory);
 
-        const projectTitle = document.createElement('h');
+        const projectTitle = document.createElement('h1');
         projectTitle.textContent = project.title;
         projectInfo.appendChild(projectTitle);
 
-        const projectDescription = document.createElement('h');
+        const projectDescription = document.createElement('p');
         projectDescription.textContent = project.description;
         projectInfo.appendChild(projectDescription);
 

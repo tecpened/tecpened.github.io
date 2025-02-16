@@ -108,7 +108,7 @@ canvas{
     flex-direction: column;
     gap:1rem;
     border-radius: 1rem;
-    height: 70vh;
+    height: 65vh;
     overflow: scroll;
 }
 .project-item{

@@ -1,7 +1,7 @@
 
 const uiData = [
-    { icons:'c,c,c', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
-    { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
+    { icons:'c,c,c', title: 'turfhub', category: 'ui/ux', image: './public/interior/1.png', description: 'A sports arena booking app, designed to get the smoothest and fastest user experience' },
+    { icons:'', title: 'Todvob', category: 'ui/ux', image: './public/interior/2.png', description: 'Todvob, Your personal web or social media chatbot creator dashboard, facilitated by directing UX and generic UI' },
     { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
     { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
     { icons:'', title: 'Project 1', category: 'ui/ux', image: './public/interior/1.png', description: 'Description of Project 1' },
