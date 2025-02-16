@@ -92,8 +92,8 @@ export function init3DScene(canvas, valueX, valueY) {
 
 const profile = {
     title: 'following',
-    motto: '"Not letting you quit, until we make you a brand"',
-    detail: 'Looking to grow your business and connect with more customers? Tecpen is your digital gateway, offering cutting-edge solutions like dynamic websites, 3D content and animations, digital marketing, software solutions, and social media management to elevate your brand. Think of us as your Wizard of Oz, guiding you through the digital world with innovative strategies that enhance visibility, engagement, and efficiency. Whether you need a stunning online presence, immersive product modeling, or data-driven marketing, we’ve got you covered. Let’s build something extraordinary together! Get Started Today'
+    motto: '"Not letting you quit, until we make you a Brand"',
+    detail: 'Looking to grow your business and connect with more customers? Tecpen is your digital gateway, offering cutting-edge solutions like dynamic websites, 3D content and animations, digital marketing, software solutions, and social media management to elevate your brand. Think of us as your Wizard of Oz, guiding you through the digital world with innovative strategies that enhance visibility, engagement, and efficiency. Whether you need a stunning online presence, immersive product modeling, or data-driven marketing, we’ve got you covered. Let’s build something extraordinary together!'
 }
 
 export function tecpen(body){
@@ -111,6 +111,10 @@ export function tecpen(body){
     const detail = document.createElement('p')
     detail.textContent = `${profile.detail}`
     information.appendChild(detail);
+
+    const button = document.createElement('button');
+    button.textContent = 'Get Started Today'
+    information.appendChild(button)
 
     body.appendChild(information)
 }
