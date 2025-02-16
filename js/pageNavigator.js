@@ -1,34 +1,9 @@
 import { init3DScene } from './tecpen3D.js';
 import { tecpen } from './tecpen3D.js';
+
 // Content Panel
 const contentArea = document.querySelector('.content');
-const breadcrumb = document.querySelector('.breadcrumb')
-// init3DScene(contentArea);
-
-// Set up content for each page
-// const sidebarContent = {
-//   home: {
-//       heading: "Home",
-//       title: "tecpen",
-//       subtitle: "resonating in style!"
-//     },
-//     projects: {
-//       heading: "Projects",
-//       title: "ui/ux design",
-//       categories: categoryDataMap,
-//       subtitle: "Here are some of our projects."
-//     },
-//     services: {
-//       heading: "Services",
-//       title: "tecpen",
-//       subtitle: "Explore our services here."
-//     },
-//     contact: {
-//       heading: "Contact",
-//       title: "tecpen",
-//       subtitle: "Feel free to reach out to us."
-//     }
-//   };
+const breadcrumb = document.querySelector('.breadcrumb') //check this please Nihaz!
 
 function changeContent(newContent) {
     if(newContent.tagName == 'DIV') {
@@ -48,20 +23,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners for navigation items
     projectsBtn.addEventListener('click', function() {
+      breadcrumb.style.display = 'block';
         fetchProjects();
     });
 
     servicesBtn.addEventListener('click', function() {
+      breadcrumb.style.display = 'block';
       displayServices();
     });
 
     companyBtn.addEventListener('click', function() {
+      breadcrumb.style.display = 'none';
       const contentBody = document.querySelector('.content');
       contentBody.innerHTML='';
       const HomeContainer = document.createElement('div');
       HomeContainer.className = 'home';
       contentBody.appendChild(HomeContainer);
-      breadcrumb.innerHTML = '';
       tecpen(HomeContainer);
       init3DScene(HomeContainer,0.6,2);
     });
