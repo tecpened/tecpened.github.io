@@ -19,6 +19,22 @@ function displayServices() {
     servicesContainer.className = 'services'
     content.appendChild(servicesContainer)
 
+    const serviceHeader = document.createElement('div');
+    serviceHeader.className = 'serviceo';
+    serviceHeader.style.width = '20rem'
+    serviceHeader.style.padding = '1rem';
+
+    const servicetTitle = document.createElement('p');
+    servicetTitle.textContent = 'services'; ;
+    serviceHeader.appendChild(servicetTitle);
+
+    const servicetDescription = document.createElement('h1');
+    servicetDescription.textContent = `service`;
+    serviceHeader.appendChild(servicetDescription);
+
+    // Append project info and image
+    servicesContainer.appendChild(serviceHeader);
+
     servicesData.forEach((service, index) => {
         // Create the service item container
         const serviceItem = document.createElement('div');

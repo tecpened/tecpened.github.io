@@ -2,7 +2,8 @@ import { init3DScene } from './tecpen3D.js';
 import { tecpen } from './tecpen3D.js';
 
 // Content Panel
-const contentArea = document.querySelector('.content');
+const contentArea = document.querySelector('.contents');
+const sidebarTitle = document.getElementById('sidebar-title');
 const breadcrumb = document.querySelector('.breadcrumb') //check this please Nihaz!
 
 function changeContent(newContent) {
@@ -23,17 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners for navigation items
     projectsBtn.addEventListener('click', function() {
-      breadcrumb.style.display = 'block';
+      sidebarTitle.style.display = 'none';
         fetchProjects();
     });
 
     servicesBtn.addEventListener('click', function() {
-      breadcrumb.style.display = 'block';
+      sidebarTitle.style.display = 'none';
       displayServices();
     });
 
     companyBtn.addEventListener('click', function() {
-      breadcrumb.style.display = 'none';
+      sidebarTitle.style.display = 'none';
       const contentBody = document.querySelector('.content');
       contentBody.innerHTML='';
       const HomeContainer = document.createElement('div');
@@ -48,10 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Get all the required Ids and Divisions
-const sidebarHeading = document.getElementById('sidebar-heading');
-const sidebarTitle = document.getElementById('sidebar-title');
-const sidebarSubtitle = document.getElementById('sidebar-subtitle');
 
 // Check Page Type
 function checkPage(page){
@@ -69,7 +66,7 @@ function checkPage(page){
 //Sidebar Information
 function changePage(page) {
   // sidebarHeading.textContent = `${sidebarContent[page].heading}`;
-  sidebarTitle.textContent = `${sidebarContent[page].title}`;
+  // sidebarTitle.textContent = `${sidebarContent[page].title}`;
   // sidebarSubtitle.textContent = `${sidebarContent[page].subtitle}`;
 
   // If the page is "projects", show the categories under it

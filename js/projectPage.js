@@ -20,6 +20,7 @@ function displayCategories(categories) {
         categoryElement.addEventListener('click', function(){
             fetchProjects(category);
             changeCategoryText(category)
+            
 })
 
         // Fade-in effect for categories
@@ -42,9 +43,29 @@ function fetchProjects(category) {
     const projects = document.createElement('div');
     projects.className = 'projects';
     projectsContainer.appendChild(projects);
+    
+    // First Project
+    const projectHeader = document.createElement('div');
+    projectHeader.className = 'projecto';
+    projectHeader.style.width = '20rem'
+    projectHeader.style.padding = '1rem';
+
+    const projectTitle = document.createElement('p');
+    projectTitle.textContent = 'Projects'; ;
+    projectHeader.appendChild(projectTitle);
+
+    const projectDescription = document.createElement('h1');
+    projectDescription.textContent = `${(category) || ["ui/ux"]}`;
+    projectHeader.appendChild(projectDescription);
+
+    // Append project info and image
+    projects.appendChild(projectHeader);
+     
+
 
     // Loop through each project in the selected category and create project items
     projectsData.forEach((project, index) => {
+    
         const projectItem = document.createElement('div');
         projectItem.className = 'project-item';
         projectItem.style.opacity = 0;
@@ -87,7 +108,6 @@ function fetchProjects(category) {
 
     displayCategories(sidebarContent.projects.categories); 
 }
-
 
 // Fetch initial data for the home or default category (e.g., "ui/ux")
 function initPage() {
