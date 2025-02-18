@@ -1,5 +1,5 @@
 :root{
-    --primary-color : #000000;
+    --primary-color : #020202;
     --secondary-color : #8F72E3;
     --input-box : #E5E5E5;
     --sidebar : darkgrey;
@@ -44,6 +44,36 @@ html, body{
     mix-blend-mode: soft-light;
     filter: blur(2rem);
 }
+
+.container::before {
+    content: '';
+    position: fixed;
+    width: 30rem;  /* Size of the contour circle */
+    height: 30rem;
+    border-radius: 50%;
+    background-color: rgb(76, 148, 177);  /* Dark contour */
+    pointer-events: none;  /* Prevent it from interfering with other elements */
+    z-index: 100;
+    mix-blend-mode: soft-light;
+    filter: blur(5rem);
+    top: 0rem;
+    left: 0rem;
+}
+.container::after {
+    content: '';
+    position: fixed;
+    width: 30rem;  /* Size of the contour circle */
+    height: 30rem;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);  /* Dark contour */
+    pointer-events: none;  /* Prevent it from interfering with other elements */
+    z-index: 1;
+    mix-blend-mode: soft-light;
+    filter: blur(10rem);
+    right: 1rem;
+    bottom: 1rem;
+}
+
 
 /* Background Image */
 

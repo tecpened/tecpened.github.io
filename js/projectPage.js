@@ -83,7 +83,7 @@ function fetchProjects(category) {
         projectCategory.textContent = project.category;
         projectInfo.appendChild(projectCategory);
 
-        const projectTitle = document.createElement('h1');
+        const projectTitle = document.createElement('h4');
         projectTitle.textContent = project.title;
         projectInfo.appendChild(projectTitle);
 

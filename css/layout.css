@@ -132,6 +132,7 @@ canvas{
     min-width: 15rem;
     width: 20rem;
     height: 15rem;
+    /* border: solid 0.5px rgba(255, 255, 255, 0.075); */
     /* height: 13rem; */
     /*The transition is set in the JavaScript file (projectpage.js).*/
     box-shadow: 0 0 .5rem rgb(61, 72, 92);
