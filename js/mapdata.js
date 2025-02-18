@@ -30,9 +30,9 @@ const animData = [
 ];
 const categoryDataMap = {
     "ui/ux": uiData,
-    "web development": webData,
+    "software development": webData,
     animation: animData,
-    video: '',
+    Marketing: '',
     photography: ''
 };
 
