@@ -103,7 +103,13 @@ function fetchProjects(category) {
 
         // Add fade-in effect to each project
         projectItem.style.transition = '0.8s'; // Adding smooth transition
-        setTimeout(() => projectItem.style.opacity = 1, 100 * index); // Staggered fade-in effect
+        setTimeout(() => projectItem.style.opacity = 1, 100 * index); // Staggered fade-in 
+        
+        projectItem.addEventListener('click', function(){
+            console.log('hello');
+            openModal(project);
+            
+        })
     });
 
     displayCategories(sidebarContent.projects.categories); 
@@ -122,3 +128,81 @@ document.addEventListener('DOMContentLoaded', () => {
     // initPage();
     
 });
+
+// Function to create and show the modal dynamically
+function openModal(projectData) {
+    // Create the modal container
+    var modal = document.createElement('div');
+    modal.id = 'modal'
+    // modal.classList.add('modal');
+    
+    
+    // Create the modal content
+    var modalContent = document.createElement('div');
+    modalContent.classList.add('modal-content');
+    
+    // Create the close button
+    var closeBtn = document.createElement('span');
+    closeBtn.classList.add('close-btn');
+    closeBtn.innerHTML = '&times;';  // Close button character
+    
+    // Add the image inside the modal
+    var modalIMG = document.createElement('img');
+    modalIMG.src= projectData.image;
+
+    //Image Styling Here!!
+    modalIMG.style.height = '40vh'
+    modalContent.appendChild(modalIMG);
+
+    // Paragraph
+    var modalParagraph = document.createElement('p');
+    modalParagraph.innerText = projectData.category;
+    modalContent.appendChild(modalParagraph);
+
+    // Add the content inside the modal
+    var modalText = document.createElement('h1');
+    modalText.innerText = projectData.title;
+    modalContent.appendChild(modalText);
+
+    // Add the content inside the modal
+    var modalDescription = document.createElement('p');
+    modalDescription.innerText = projectData.description;
+    modalContent.appendChild(modalDescription);
+        
+    // Append close button to the modal content
+    modalContent.appendChild(closeBtn);
+    
+    // Append modal content to the modal container
+    modal.appendChild(modalContent);
+    
+    // Append the modal to the body
+    document.body.appendChild(modal);
+    
+    // Display the modal
+    modal.style.display = 'block';
+  
+    // Event listener to close the modal when the close button is clicked
+    closeBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+      document.body.removeChild(modal);  // Remove modal from the DOM when closed
+    });
+    
+    // Close the modal if the user clicks outside of the modal content
+    window.addEventListener('click', function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+        document.body.removeChild(modal);  // Remove modal from the DOM when closed
+      }
+    });
+  }
+  
+  // Add event listener to trigger modal on click of a specific element (for example, "projectItem")
+//   document.getElementById('projectItem').addEventListener('click', function() {
+//     console.log('hello');
+    
+//     // Assuming you're passing the text or data of the clicked projectItem
+//     var projectData = this.innerText || this.getAttribute('data-project'); // Example of getting data
+    
+//     openModal(projectData); // Pass data to the modal
+//   });
+  
