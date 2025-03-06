@@ -47,8 +47,11 @@
     top: 0;
     margin: 2%;
     cursor: pointer;
- 
+    backdrop-filter: blur(.5rem);
+    border-radius: 1rem;
+    z-index: 9999;
 }
+
 .boxText{
     background-color: var(--transparent);
     border-radius: 1rem;
@@ -58,28 +61,29 @@
 }
 .boxList{
     display: none;
+    width: 100%;
+    
 }
 
 #nav:hover .boxList {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    border-radius: 1rem;
 
 }
-.navbar-option{
+.navbar-option {
     display: flex;
     position: relative;
-    /* background-color: var(--secondary-color); */
     cursor: pointer;
-    width: 100%;
+    width: 100%; /* Make the navbar option fill the container */
     padding: 1rem;
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+    border-radius: 1rem;
 }
 
 .navbar-option:hover{
     background-color: var(--secondary-color);
-    cursor: pointer;
-    width: 100%;
-    padding: 1rem;
 }
 
 @media (max-width: 1050px) {
