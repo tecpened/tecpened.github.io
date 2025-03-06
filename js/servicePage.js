@@ -7,17 +7,13 @@ const servicesData = [
     { icons:'AI', title: 'AI', description: 'Implementing artificial intelligence solutions for businesses' }
 ];
 
-// Get the required elements
-const content = document.querySelector('.content');  // Assuming you have a container for services
-
-
 
 // Function to display the services
-function displayServices() {
-    content.innerHTML = '';  // Clear previous content
+function displayServices(body) {
+    body.innerHTML = '';  // Clear previous body
     const servicesContainer = document.createElement('div');  
     servicesContainer.className = 'services'
-    content.appendChild(servicesContainer)
+    body.appendChild(servicesContainer)
 
     const serviceHeader = document.createElement('div');
     serviceHeader.className = 'serviceo';

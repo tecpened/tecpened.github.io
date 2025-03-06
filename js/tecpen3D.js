@@ -96,6 +96,8 @@ const profile = {
     detail: 'Looking to grow your business and connect with more customers? Tecpen is your digital gateway, offering cutting-edge solutions like dynamic websites, 3D content and animations, digital marketing, software solutions, and social media management to elevate your brand. Think of us as your Wizard of Oz, guiding you through the digital world with innovative strategies that enhance visibility, engagement, and efficiency. Whether you need a stunning online presence, immersive product modeling, or data-driven marketing, we’ve got you covered. Let’s build something extraordinary together!'
 }
 
+
+
 export function tecpen(body){
 
     const information = document.createElement('div')
@@ -120,4 +122,22 @@ export function tecpen(body){
 }
 
 
+export function bentoBox(body, headerText, subText, icon){
 
+    const box = document.createElement('div')
+    box.className = 'box'
+
+    const detail = document.createElement('p')
+    detail.textContent = `${profile.detail}`
+    box.appendChild(detail);
+
+    const header = document.createElement('h4')
+    header.textContent = headerText;
+    box.appendChild(header);
+
+    const subtitle = document.createElement('h1')
+    subtitle.textContent = subText;
+    box.appendChild(subtitle);
+
+    body.appendChild(box)
+}

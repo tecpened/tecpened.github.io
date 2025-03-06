@@ -10,7 +10,7 @@ const toggleTheme = () => {
 };
 
 // Example: Adding an event listener to a button
-document.querySelector('.theme-button').addEventListener('click', toggleTheme);
+// document.querySelector('.theme-button').addEventListener('click', toggleTheme);
 
 /////////////////////Cursor Effect///////////////////
 

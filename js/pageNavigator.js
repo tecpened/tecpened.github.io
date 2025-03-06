@@ -1,89 +1,114 @@
-import { init3DScene } from './tecpen3D.js';
-import { tecpen } from './tecpen3D.js';
+const container = document.querySelector('.container');
+  
+// Call fetchHome function to load the content
+fetchHome();
 
-// Content Panel
-const contentArea = document.querySelector('.contents');
-const sidebarTitle = document.getElementById('sidebar-title');
-const breadcrumb = document.querySelector('.breadcrumb') //check this please Nihaz!
+// Select the home container, project container, and project card (Bento Box)
+// const homeContainer = document.querySelector('.home');
+function createNavbar(id, icon, header, subtitle) {
+  // Create the navbar container
+  const navbar = document.createElement('div');
+  navbar.classList.add('navbar');
+  navbar.id = id;  // Assign the provided ID to the Navbar
 
-function changeContent(newContent) {
-    if(newContent.tagName == 'DIV') {
-    contentArea.innerHTML = '';
-    contentArea.appendChild(newContent);
-    }
-    else{
-    contentArea.innerHTML = newContent;
-    } // Update the content
+  // Create and add the icon row
+  const iconRow = document.createElement('div');
+  iconRow.classList.add('icon-row');
+  iconRow.innerHTML = icon;  // Insert the icon
+  navbar.appendChild(iconRow);
+
+  // Create and add the header row
+  const boxText = document.createElement('div');
+  boxText.className = 'boxText';
+  boxText.style.display = 'flex';
+  boxText.style.flexDirection = 'column';
+  boxText.style.gap = '.3rem';
+
+  const title = document.createElement('h4');
+  title.textContent = header;  // Insert the header
+  title.classList.add('navbar-title');
+  
+  const subtext = document.createElement('h2');
+  subtext.textContent = subtitle;  // Insert the subtitle
+  
+  boxText.appendChild(title);
+  boxText.appendChild(subtext);
+
+  // Create the list of options (projects, services, contacts)
+  const boxList = document.createElement('div');
+  boxList.className = 'boxList';
+
+  // Create options (projects, services, contacts)
+  const options = ['Projects', 'Services', 'Contacts'];
+
+  options.forEach(optionText => {
+    const option = document.createElement('h4');
+    option.textContent = optionText;
+    option.classList.add('navbar-option');
+    boxList.appendChild(option);
+
+    // Add click event to each option
+    option.addEventListener('click', () => {
+      changeContainerContent(optionText);  // Change content when option is clicked
+    });
+  });
+
+  // Add the home header click functionality to navigate back to home content
+  title.addEventListener('click', () => {
+    changeContainerContent('Home');  // Navigate to home when title is clicked
+  });
+
+  navbar.appendChild(boxText);
+  navbar.appendChild(boxList);
+
+  return navbar;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const projectsBtn = document.getElementById('projects');
-    const servicesBtn = document.getElementById('services');
-    const companyBtn = document.getElementById('home');
-    const contactBtn = document.getElementById('contact');
+// Function to change the container content based on selected option
+function changeContainerContent(option) {
+  const container = document.querySelector('.container'); // Assume this is the container you want to change
 
-    // Event listeners for navigation items
-    projectsBtn.addEventListener('click', function() {
-      sidebarTitle.style.display = 'none';
-        fetchProjects();
-    });
+  // Clear current content
+  container.innerHTML = '';
 
-    servicesBtn.addEventListener('click', function() {
-      sidebarTitle.style.display = 'none';
-      displayServices();
-    });
+  // Add specific content based on the selected option
+  switch (option) {
+    case 'Projects':
+      const initialCategory = 'ui/ux'; // Default category
+      fetchProjects(initialCategory, container);
+      container.appendChild(createNavbar('nav', 'icon1', 'tecpen', 'resonating in style'));
+      break;
+    case 'Services':
+      displayServices(container)
+      container.appendChild(createNavbar('nav', 'icon1', 'tecpen', 'resonating in style'));
+      break;
+    case 'Contacts':
+      container.innerHTML = '<h1>Contacts Section</h1><p>Here are the contact details...</p>';
+      break;
+    case 'Home':
+      window.location.href = '/';
+      break;
+    default:
+      window.location.href = '/';
+  }
+}
 
-    companyBtn.addEventListener('click', function() {
-      sidebarTitle.style.display = 'none';
-      const contentBody = document.querySelector('.content');
-      contentBody.innerHTML='';
-      const HomeContainer = document.createElement('div');
-      HomeContainer.className = 'home';
-      contentBody.appendChild(HomeContainer);
-      tecpen(HomeContainer);
-      init3DScene(HomeContainer,0.6,2);
-    });
+// Add the event listener to the project card
+const projectCard = document.querySelector('#bento-2');
+const serviceCard = document.querySelector('#bento-4');
 
-    contactBtn.addEventListener('click', function() {
-        changeContent('<h2>Contact Section</h2><p>Get in touch with us via email or social media.</p>');
-    });
+projectCard.addEventListener('click', function() {
+
+  // Show the projects container
+  const initialCategory = 'ui/ux'; // Default category
+  fetchProjects(initialCategory, container);
+  container.appendChild(createNavbar('nav', 'icon1', 'tecpen', 'resonating in style'));
+
 });
 
+serviceCard.addEventListener('click', function() {
 
-// Check Page Type
-function checkPage(page){
-  if(page == "home"){
-      // bottomSidebar.innerHTML = "company profile";
-  }
-  else if(page == "services"){
-      bottomSidebar.innerHTML = "services";
-  }
-  else{
-      bottomSidebar.innerHTML = "contact";
-  }
-}
-
-//Sidebar Information
-function changePage(page) {
-  // sidebarHeading.textContent = `${sidebarContent[page].heading}`;
-  // sidebarTitle.textContent = `${sidebarContent[page].title}`;
-  // sidebarSubtitle.textContent = `${sidebarContent[page].subtitle}`;
-
-  // If the page is "projects", show the categories under it
-  if (page === "projects") {
-      
-  }
-  else {
-      // bottomSidebar.innerHTML = ""; // Hide categories if not "projects"
-      checkPage(page);
-  }
-}
-
-const navItems = document.querySelectorAll('.right .items h5');
-
-navItems.forEach(item => {
-  item.addEventListener('click', function () {
-    const page = item.textContent.trim().toLowerCase(); // Get the text content of the clicked item (company, projects, etc.)
-    changePage(page); // Change the content based on the clicked page
-  });
+  // Default category
+  displayServices(container)
+  container.appendChild(createNavbar('nav', 'icon1', 'tecpen', 'resonating in style'));
 });

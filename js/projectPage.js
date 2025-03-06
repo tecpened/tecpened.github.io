@@ -1,208 +1,100 @@
-
-// const container = document.querySelector('.container');
-const projectsContainer = document.querySelector('.content');
-const sidebarTitle = document.getElementById('sidebar-title');
-
-// const bottomBar = document.getElementById('bottom');
-// Function to display categories
-function displayCategories(categories) {
+// Function to display categories (now only bottom bar)
+function displayCategories(categories, body) {
+    // Create bottom bar for category selection
     const bottomBar = document.createElement('div');
     bottomBar.className = 'bottom';
-    projectsContainer.appendChild(bottomBar);
+    body.appendChild(bottomBar);
 
-    // Loop through categories and create category elements
+    // Loop through categories and create clickable elements
     Object.keys(categories).forEach(category => {
         const categoryElement = document.createElement("h6");
         categoryElement.textContent = category;
 
-        // Append to the bottomBar and add click event to fetch projects
         bottomBar.appendChild(categoryElement);
-        categoryElement.addEventListener('click', function(){
-            fetchProjects(category);
-            changeCategoryText(category)
-            
-})
-
-        // Fade-in effect for categories
-        // setTimeout(() => categoryElement.style.opacity = 1, 10);
+        categoryElement.addEventListener('click', () => {
+            fetchProjects(category, body); // Load projects for the selected category
+        });
     });
-}
-
-// Function to change the sidebar title
-function changeCategoryText(category) {
-    sidebarTitle.textContent = category; // Change the sidebar title
 }
 
 // Function to fetch and display projects for a selected category
-function fetchProjects(category) {
+function fetchProjects(category, body) {
     // Clear existing projects before displaying new ones
-    projectsContainer.innerHTML = '';
-    // Re-display categories after clearing
-
+    body.innerHTML = '';
+    
     const projectsData = categoryDataMap[category] || categoryDataMap["ui/ux"]; // Fallback to default category
     const projects = document.createElement('div');
     projects.className = 'projects';
-    projectsContainer.appendChild(projects);
-    
-    // First Project
-    const projectHeader = document.createElement('div');
-    projectHeader.className = 'projecto';
-    projectHeader.style.width = '20rem'
-    projectHeader.style.padding = '1rem';
+    body.appendChild(projects);
 
-    const projectTitle = document.createElement('p');
-    projectTitle.textContent = 'Projects'; ;
-    projectHeader.appendChild(projectTitle);
-
-    const projectDescription = document.createElement('h1');
-    projectDescription.textContent = `${(category) || ["ui/ux"]}`;
-    projectHeader.appendChild(projectDescription);
-
-    // Append project info and image
-    projects.appendChild(projectHeader);
-     
-
+    // // Create and append the project header
+    // const projectHeader = document.createElement('div');
+    // projectHeader.className = 'project-header';
+    // projectHeader.innerHTML = `
+    //     <p>Projects</p>
+    //     <h1>${category}</h1>
+    // `;
+    // projects.appendChild(projectHeader);
 
     // Loop through each project in the selected category and create project items
     projectsData.forEach((project, index) => {
-    
         const projectItem = document.createElement('div');
         projectItem.className = 'project-item';
         projectItem.style.opacity = 0;
-
-        // Create and append project image and info
-        const projectImage = document.createElement('img');
-        projectImage.src = project.image;
-        projectImage.alt = project.title;
-        projectImage.className = 'content-image';
-
-        const projectInfo = document.createElement('div');
-        projectInfo.className = 'project-info';
-
-        const projectCategory = document.createElement('h4');
-        projectCategory.textContent = project.category;
-        projectInfo.appendChild(projectCategory);
-
-        const projectTitle = document.createElement('h4');
-        projectTitle.textContent = project.title;
-        projectInfo.appendChild(projectTitle);
-
-        const projectDescription = document.createElement('p');
-        projectDescription.textContent = project.description;
-        projectInfo.appendChild(projectDescription);
-
-        const projectIcons = document.createElement('div');
-        projectIcons.className = 'icons';
-        projectIcons.textContent = project.icons;
-        projectInfo.appendChild(projectIcons);
-
-        // Append project info and image
-        projectItem.appendChild(projectInfo);
-        projectItem.appendChild(projectImage);
+        projectItem.innerHTML = `
+            <img src="${project.image}" alt="${project.title}" class="content-image" />
+            <div class="project-info">
+                <h4>${project.category}</h4>
+                <h4>${project.title}</h4>
+                <p>${project.description}</p>
+                <div class="icons">${project.icons}</div>
+            </div>
+        `;
         projects.appendChild(projectItem);
 
         // Add fade-in effect to each project
-        projectItem.style.transition = '0.8s'; // Adding smooth transition
-        setTimeout(() => projectItem.style.opacity = 1, 100 * index); // Staggered fade-in 
-        
-        projectItem.addEventListener('click', function(){
-            console.log('hello');
-            openModal(project);
-            
-        })
+        setTimeout(() => {
+            projectItem.style.opacity = 1;
+            projectItem.style.transition = '1s';
+        }, 100 * index);
+
+        // Add event listener to open modal on project click
+        projectItem.addEventListener('click', () => openModal(project));
     });
 
-    displayCategories(sidebarContent.projects.categories); 
+    // Re-display categories after fetching projects (in case new categories need to be shown)
+    displayCategories(sidebarContent.projects.categories, body);
 }
-
-// Fetch initial data for the home or default category (e.g., "ui/ux")
-function initPage() {
-    const initialCategory = 'ui/ux'; // Default category
-    fetchProjects(initialCategory);
-    changeCategoryText(initialCategory); // Change sidebar title
-}
-
-// Call this function to initialize the page when it's loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Trigger initial data fetch and display
-    // initPage();
-    
-});
 
 // Function to create and show the modal dynamically
 function openModal(projectData) {
-    // Create the modal container
-    var modal = document.createElement('div');
-    modal.id = 'modal'
-    // modal.classList.add('modal');
-    
-    
-    // Create the modal content
-    var modalContent = document.createElement('div');
-    modalContent.classList.add('modal-content');
-    
-    // Create the close button
-    var closeBtn = document.createElement('span');
-    closeBtn.classList.add('close-btn');
-    closeBtn.innerHTML = '&times;';  // Close button character
-    
-    // Add the image inside the modal
-    var modalIMG = document.createElement('img');
-    modalIMG.src= projectData.image;
-
-    //Image Styling Here!!
-    modalIMG.style.height = '40vh'
-    modalContent.appendChild(modalIMG);
-
-    // Paragraph
-    var modalParagraph = document.createElement('p');
-    modalParagraph.innerText = projectData.category;
-    modalContent.appendChild(modalParagraph);
-
-    // Add the content inside the modal
-    var modalText = document.createElement('h1');
-    modalText.innerText = projectData.title;
-    modalContent.appendChild(modalText);
-
-    // Add the content inside the modal
-    var modalDescription = document.createElement('p');
-    modalDescription.innerText = projectData.description;
-    modalContent.appendChild(modalDescription);
-        
-    // Append close button to the modal content
-    modalContent.appendChild(closeBtn);
-    
-    // Append modal content to the modal container
-    modal.appendChild(modalContent);
-    
-    // Append the modal to the body
+    const modal = document.createElement('div');
+    modal.id = 'modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img src="${projectData.image}" style="height: 40vh" />
+            <p>${projectData.category}</p>
+            <h1>${projectData.title}</h1>
+            <p>${projectData.description}</p>
+        </div>
+    `;
     document.body.appendChild(modal);
-    
-    // Display the modal
-    modal.style.display = 'block';
-  
-    // Event listener to close the modal when the close button is clicked
-    closeBtn.addEventListener('click', function() {
-      modal.style.display = 'none';
-      document.body.removeChild(modal);  // Remove modal from the DOM when closed
-    });
-    
-    // Close the modal if the user clicks outside of the modal content
-    window.addEventListener('click', function(event) {
-      if (event.target == modal) {
+
+    // Event listener to close the modal
+    modal.querySelector('.close-btn').addEventListener('click', () => {
         modal.style.display = 'none';
-        document.body.removeChild(modal);  // Remove modal from the DOM when closed
-      }
+        document.body.removeChild(modal);
     });
-  }
-  
-  // Add event listener to trigger modal on click of a specific element (for example, "projectItem")
-//   document.getElementById('projectItem').addEventListener('click', function() {
-//     console.log('hello');
-    
-//     // Assuming you're passing the text or data of the clicked projectItem
-//     var projectData = this.innerText || this.getAttribute('data-project'); // Example of getting data
-    
-//     openModal(projectData); // Pass data to the modal
-//   });
-  
+
+    // Close the modal if clicked outside
+    window.addEventListener('click', event => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            document.body.removeChild(modal);
+        }
+    });
+
+    modal.style.display = 'block';
+}
+

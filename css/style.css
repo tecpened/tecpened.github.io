@@ -2,22 +2,24 @@
     --primary-color : #020202;
     --secondary-color : #8F72E3;
     --input-box : #E5E5E5;
-    --sidebar : darkgrey;
+    --transparent : rgba(255, 255, 255, 0.101);
     --font : white;
     --shadow : rgb(0, 0, 0);
     --title : 4vw;
     --text : 1.5vw;
+    --gap: .5rem
 }
 
 [data-theme='light'] {
     --primary-color: #F6F6F6;
     --secondary-color: #8F72E3;
-    --sidebar: darkgrey;
+    --transparent : rgba(255, 255, 255, 0.101);
     --input-box : #E5E5E5;
     --font: #1E1E1E;
     --shadow: rgba(14, 14, 14, 0.4);
     --title : 4vw;
     --text : 1.5vw;
+    --gap: .5rem
 }
 
 html, body{
@@ -25,9 +27,7 @@ html, body{
     display: flex;
     flex-direction: column;
     background-color: var(--primary-color);
-    margin-inline: 3%;
     font-family: 'Montserrat';
-    overflow: hidden;
     gap: min(0rem,1rem);
 }
 
