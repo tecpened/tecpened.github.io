@@ -66,7 +66,7 @@
     flex-direction: row;  /* Allows wrapping to the next row if items exceed width */
     gap: 2rem;  /* Adds space between items */
     justify-content: space-between;  /* Ensures items are spaced evenly */
-    background-color: var(--font);  /* Set background color of the featured section */
+    background-color: rgb(194, 182, 226);  /* Set background color of the featured section */
     padding: 1rem;  /* Add padding to the featured section */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for a lifted effect */
   }
