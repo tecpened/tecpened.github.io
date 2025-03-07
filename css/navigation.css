@@ -52,6 +52,7 @@
     flex-direction: row;
 }
 .boxText{
+    /* display: none; */
     border-radius: 1rem;
     padding: 2rem;
     gap: 1rem;
@@ -83,6 +84,7 @@
     box-sizing: border-box; /* Ensure padding doesn't cause overflow */
     border-radius: 1rem;
     align-items: center;
+    transition: .5s;
     
 }
 .navbar-option:hover{

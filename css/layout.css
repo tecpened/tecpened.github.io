@@ -20,7 +20,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 98vh;
 }
 .bottom{
     position: absolute;
@@ -70,7 +70,7 @@
     justify-content: flex-end;
 }
 #bento-1{
-    height: 20%;
+    height: 20vh;
 }
 .bento-box:hover{
     background-color: var(--secondary-color);
@@ -226,6 +226,11 @@ canvas{
         gap: 0rem;
         flex-direction: column;
         /* background-color:red; */
+        overflow: hidden;
+        height: 98vh;
+    }
+    .home{
+        overflow-y: scroll;
     }
     .sidebar{
         width: auto;
@@ -233,26 +238,15 @@ canvas{
         margin-bottom: 0rem;
     }
 
-    /* .sidebar #bottom::before {
-        content: '';
-        width: 75vh;
-        height: 6vh;
-        border-radius: 100%;
-        background-color: rgb(0, 0, 0);
-        position: absolute;
-        top: 7rem;
-        left: -5rem;
-    }
-    .sidebar #bottom::after {
-        content: '';
-        width: 75vh;
-        height: 6vh;
-        border-radius: 100%;
-        background-color: rgb(0, 0, 0);
-        position: absolute;
-        top: 12rem;
-        left: -5rem;
-    } */
+   .firstRow{
+    display: flex;
+    flex-direction: column;
+   }
+   
+   .secondRow{
+    display: flex;
+    flex-direction: column;
+   }
 
     .bottom{
         /* left: 0.5vw; */
