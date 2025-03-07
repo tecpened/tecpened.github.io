@@ -51,6 +51,50 @@
     gap: var(--gap);
     height: 98vh;
 }
+
+#bento-3{
+    padding: 0rem;
+    clip-path: padding-box;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#bento-3 .bentotext{
+    padding: 2rem;
+}
+.featured {
+    position: relative;
+    display: flex;
+    flex-direction: row;  /* Allows wrapping to the next row if items exceed width */
+    gap: 2rem;  /* Adds space between items */
+    justify-content: space-between;  /* Ensures items are spaced evenly */
+    background-color: var(--font);  /* Set background color of the featured section */
+    padding: 1rem;  /* Add padding to the featured section */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for a lifted effect */
+  }
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;  /* Rounded corners for individual items */
+    padding: 1rem;  /* Padding inside each item */
+    gap: 1rem;
+    transition: transform 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+.item:hover {
+    transform: scale(1.05);  /* Slight zoom effect on hover */
+}
+
+.item h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.item p {
+    font-size: .6rem;
+    color: #666;
+    text-align: center;
+}
+
 .bento-box {
     position: relative;
     display: flex;
@@ -237,7 +281,9 @@ canvas{
         flex-direction: column;
         margin-bottom: 0rem;
     }
-
+    .featured {
+        overflow-x: scroll;
+    }
    .firstRow{
     display: flex;
     flex-direction: column;
@@ -248,15 +294,6 @@ canvas{
     flex-direction: column;
    }
 
-    .bottom{
-        /* left: 0.5vw; */
-        /* height: auto; */
-    }
-
-    .content{
-        /* width: auto; */
-        margin-block: 1rem;
-        border-radius: 1rem;
     }
    
 }
