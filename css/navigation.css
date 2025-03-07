@@ -40,37 +40,41 @@
     transition: .4s ease-in-out;
 }
 #nav{
-    width: 15rem;
+    /* width: 15rem; */
     height: fit-content;
-    display: block;
     position: absolute;
     top: 0;
-    margin: 2%;
+    margin: 1%;
     cursor: pointer;
     backdrop-filter: blur(.5rem);
+    background-color: var(--transparent);
     border-radius: 1rem;
     z-index: 9999;
+    display: flex;
+    flex-direction: row;
 }
-
 .boxText{
-    background-color: var(--transparent);
     border-radius: 1rem;
     padding: 2rem;
     gap: 1rem;
-    
 }
 .boxList{
     display: none;
     width: 100%;
-    
 }
-
+.icon-row{
+    padding: 1rem;
+}
 #nav:hover .boxList {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    /* align-items: center; */
     gap: 1rem;
     border-radius: 1rem;
-
+    margin: .5rem;
+}
+#nav:hover .boxText{
+   display: none;
 }
 .navbar-option {
     display: flex;
@@ -80,8 +84,9 @@
     padding: 1rem;
     box-sizing: border-box; /* Ensure padding doesn't cause overflow */
     border-radius: 1rem;
+    align-items: center;
+    
 }
-
 .navbar-option:hover{
     background-color: var(--secondary-color);
 }

@@ -27,16 +27,6 @@ function fetchProjects(category, body) {
     projects.className = 'projects';
     body.appendChild(projects);
 
-    // // Create and append the project header
-    // const projectHeader = document.createElement('div');
-    // projectHeader.className = 'project-header';
-    // projectHeader.innerHTML = `
-    //     <p>Projects</p>
-    //     <h1>${category}</h1>
-    // `;
-    // projects.appendChild(projectHeader);
-
-    // Loop through each project in the selected category and create project items
     projectsData.forEach((project, index) => {
         const projectItem = document.createElement('div');
         projectItem.className = 'project-item';

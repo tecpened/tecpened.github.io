@@ -1,4 +1,5 @@
 const container = document.querySelector('.container');
+
   
 // Call fetchHome function to load the content
 fetchHome();
@@ -11,16 +12,10 @@ function createNavbar(id, icon, header, subtitle) {
   navbar.classList.add('navbar');
   navbar.id = id;  // Assign the provided ID to the Navbar
 
-  // Create and add the icon row
-  const iconRow = document.createElement('div');
-  iconRow.classList.add('icon-row');
-  iconRow.innerHTML = icon;  // Insert the icon
-  navbar.appendChild(iconRow);
-
   // Create and add the header row
   const boxText = document.createElement('div');
   boxText.className = 'boxText';
-  boxText.style.display = 'flex';
+  // boxText.style.display = 'flex';
   boxText.style.flexDirection = 'column';
   boxText.style.gap = '.3rem';
 
@@ -39,7 +34,7 @@ function createNavbar(id, icon, header, subtitle) {
   boxList.className = 'boxList';
 
   // Create options (projects, services, contacts)
-  const options = ['Projects', 'Services', 'Contacts'];
+  const options = ['📂', '💼', '📞'];
 
   options.forEach(optionText => {
     const option = document.createElement('h4');
@@ -59,11 +54,21 @@ function createNavbar(id, icon, header, subtitle) {
   });
 
   navbar.appendChild(boxText);
+
+  // Create and add the icon row
+  const iconRow = document.createElement('div');
+  iconRow.classList.add('icon-row');
+  iconRow.innerHTML = icon;  // Insert the icon
+  navbar.appendChild(iconRow);
+  // Add the home header click functionality to navigate back to home content
+  iconRow.addEventListener('click', () => {
+    changeContainerContent('Home');  // Navigate to home when title is clicked
+  });
+
   navbar.appendChild(boxList);
 
   return navbar;
 }
-
 // Function to change the container content based on selected option
 function changeContainerContent(option) {
   const container = document.querySelector('.container'); // Assume this is the container you want to change
@@ -71,19 +76,25 @@ function changeContainerContent(option) {
   // Clear current content
   container.innerHTML = '';
 
+  const existingNavbar = document.querySelector('.navbar');  // Assuming you are appending a <nav> element
+  if (existingNavbar) {
+    existingNavbar.remove();
+  }
+
   // Add specific content based on the selected option
   switch (option) {
-    case 'Projects':
+    case '📂': // projects
       const initialCategory = 'ui/ux'; // Default category
       fetchProjects(initialCategory, container);
-      container.appendChild(createNavbar('nav', 'icon1', 'tecpen', 'resonating in style'));
+      document.body.appendChild(createNavbar('nav', '🖋️', 'tecpen', 'resonating in style'));
       break;
-    case 'Services':
+    case '💼': // services
       displayServices(container)
-      container.appendChild(createNavbar('nav', 'icon1', 'tecpen', 'resonating in style'));
+      document.body.appendChild(createNavbar('nav', '🖋️', 'tecpen', 'resonating in style'));
       break;
-    case 'Contacts':
+    case '📞': // contacts
       container.innerHTML = '<h1>Contacts Section</h1><p>Here are the contact details...</p>';
+      document.body.appendChild(createNavbar('nav', '🖋️', 'tecpen', 'resonating in style'));
       break;
     case 'Home':
       window.location.href = '/';
@@ -102,7 +113,7 @@ projectCard.addEventListener('click', function() {
   // Show the projects container
   const initialCategory = 'ui/ux'; // Default category
   fetchProjects(initialCategory, container);
-  container.appendChild(createNavbar('nav', 'icon1', 'tecpen', 'resonating in style'));
+  document.body.appendChild(createNavbar('nav', '🖋️', 'tecpen', 'resonating in style'));
 
 });
 
@@ -110,5 +121,5 @@ serviceCard.addEventListener('click', function() {
 
   // Default category
   displayServices(container)
-  container.appendChild(createNavbar('nav', 'icon1', 'tecpen', 'resonating in style'));
+  document.body.appendChild(createNavbar('nav', '🖋️', 'tecpen', 'resonating in style'));
 });
