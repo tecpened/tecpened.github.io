@@ -1,7 +1,7 @@
 .gridImage {
     position: fixed;
     z-index: 0;
-    opacity: 8%;  /* Start with the grid invisible */
+    opacity: 2%;  /* Start with the grid invisible */
     transition: opacity 0.2s ease-in-out;
     width: 100vw;
     height: 100vh;
@@ -177,7 +177,7 @@ canvas{
 .content-image {
     height: 100%;
     width: 100%;
-    object-fit: fill; /* This ensures images are cropped to fit the area without distorting their aspect ratio */
+    object-fit: cover; /* This ensures images are cropped to fit the area without distorting their aspect ratio */
     border-radius: 1rem;
     transition: 2s ease-in-out;
     /* position: absolute; */

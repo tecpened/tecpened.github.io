@@ -56,12 +56,12 @@ function createNavbar(id, icon, header, subtitle) {
   navbar.appendChild(boxText);
 
   // Create and add the icon row
-  const iconRow = document.createElement('div');
-  iconRow.classList.add('icon-row');
-  iconRow.innerHTML = icon;  // Insert the icon
-  navbar.appendChild(iconRow);
+  const navIcon = document.createElement('div');
+  navIcon.classList.add('navIcon');
+  navIcon.innerHTML = icon;  // Insert the icon
+  navbar.appendChild(navIcon);
   // Add the home header click functionality to navigate back to home content
-  iconRow.addEventListener('click', () => {
+  navIcon.addEventListener('click', () => {
     changeContainerContent('Home');  // Navigate to home when title is clicked
   });
 
@@ -86,15 +86,15 @@ function changeContainerContent(option) {
     case '📂': // projects
       const initialCategory = 'ui/ux'; // Default category
       fetchProjects(initialCategory, container);
-      document.body.appendChild(createNavbar('nav', '🖋️', 'tecpen', 'resonating in style'));
+      document.body.appendChild(createNavbar('nav', iconNav, 'tecpen', 'resonating in style'));
       break;
     case '💼': // services
       displayServices(container)
-      document.body.appendChild(createNavbar('nav', '🖋️', 'tecpen', 'resonating in style'));
+      document.body.appendChild(createNavbar('nav', iconNav, 'tecpen', 'resonating in style'));
       break;
     case '📞': // contacts
       container.innerHTML = '<h1>Contacts Section</h1><p>Here are the contact details...</p>';
-      document.body.appendChild(createNavbar('nav', '🖋️', 'tecpen', 'resonating in style'));
+      document.body.appendChild(createNavbar('nav', iconNav, 'tecpen', 'resonating in style'));
       break;
     case 'Home':
       window.location.href = '/';
@@ -113,7 +113,7 @@ projectCard.addEventListener('click', function() {
   // Show the projects container
   const initialCategory = 'ui/ux'; // Default category
   fetchProjects(initialCategory, container);
-  document.body.appendChild(createNavbar('nav', '🖋️', 'tecpen', 'resonating in style'));
+  document.body.appendChild(createNavbar('nav', iconNav, 'tecpen', 'resonating in style'));
 
 });
 
@@ -121,5 +121,5 @@ serviceCard.addEventListener('click', function() {
 
   // Default category
   displayServices(container)
-  document.body.appendChild(createNavbar('nav', '🖋️', 'tecpen', 'resonating in style'));
+  document.body.appendChild(createNavbar('nav', iconNav, 'tecpen', 'resonating in style'));
 });

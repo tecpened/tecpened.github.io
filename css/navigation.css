@@ -7,7 +7,6 @@
     --secondary-color : #8F72E3;
     --container : black;
 }
-
 [data-theme='dark'] {
     --primary-color: #F6F6F6;
     --sidebar: darkgrey;
@@ -18,7 +17,6 @@
     --container : white;
     --shadow: black;
 }
-
 .theme-button{
 
     border-radius: 1rem;
@@ -62,7 +60,7 @@
     display: none;
     width: 100%;
 }
-.icon-row{
+.navIcon{
     padding: 1rem;
 }
 #nav:hover .boxList {

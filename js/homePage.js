@@ -60,13 +60,8 @@ function fetchHome() {
     const secondRowCol2 = document.createElement('div');
     secondRowCol2.className = 'firstRowCol';
 
-    // Define icon for Bento Boxes
-    const icon1 = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13.3333 2H18V6.66667M17 3L12 8M10 3.33333H4C3.46957 3.33333 2.96086 3.54405 2.58579 3.91912C2.21071 4.29419 2 4.8029 2 5.33333V16C2 16.5304 2.21071 17.0391 2.58579 17.4142C2.96086 17.7893 3.46957 18 4 18H14.6667C15.1971 18 15.7058 17.7893 16.0809 17.4142C16.456 17.0391 16.6667 16.5304 16.6667 16V10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>`;
-
     // Append Bento Boxes to columns with unique IDs
-    firstRowCol1.appendChild(createBentoBox('bento-1', icon1, 'tecpen', 'resonating in style'));
+    firstRowCol1.appendChild(createBentoBox('bento-1', iconNav, 'tecpen', 'resonating in style'));
     firstRowCol1.appendChild(createBentoBox('bento-2', icon1, 'Earth', 'Our home planet'));
     firstRowCol2.appendChild(createBentoBox('bento-3', icon1, 'hero', 'Latest in smartphones'));
     firstRowCol3.appendChild(createBentoBox('bento-4', icon1, 'services', 'Latest in smartphones'));
