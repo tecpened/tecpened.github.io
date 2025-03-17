@@ -119,30 +119,30 @@
         box-shadow: -4px 4px 5px rgba(255, 255, 255, .1); /* Initial white shadow */
     }
     25% {
-        box-shadow: 4px 4px 5px rgba(255, 255, 255, .1); /* White shadow rotation */
+        box-shadow: 4px 4px 5px rgba(255, 255, 255, .05); /* White shadow rotation */
     }
     50% {
-        box-shadow: 4px -4px 5px rgba(255, 255, 255, .1); /* White shadow rotation */
+        box-shadow: 4px -4px 5px rgba(255, 255, 255, .05); /* White shadow rotation */
     }
     75% {
-        box-shadow: -4px -4px 5px rgba(255, 255, 255, .1); /* White shadow rotation */
+        box-shadow: -4px -4px 5px rgba(255, 255, 255, .05); /* White shadow rotation */
     }
     100% {
-        box-shadow: -4px 4px 5px rgba(255, 255, 255, .1); /* White shadow rotation */
+        box-shadow: -4px 4px 5px rgba(255, 255, 255, .05); /* White shadow rotation */
     }
 }
 
 #bento-1 {
     height: 15vh;   
-    animation: borderRadial 4s infinite; /* Smooth animation duration */;
+    animation: borderRadial 10s infinite; /* Smooth animation duration */;
     box-shadow: -4px 4px 5px rgba(255, 255, 255, 0.1)
 }
 
 #bento-2, #bento-5{
-    animation: borderRadial 10s infinite; /* Smooth animation duration */;
+    animation: borderRadial 25s infinite; /* Smooth animation duration */;
 }
 #bento-3, #bento-6{
-    animation: borderRadial 10s infinite; /* Smooth animation duration */;
+    animation: borderRadial 30s infinite; /* Smooth animation duration */;
 }
 .bento-box:hover{
     background-color: var(--secondary-color);
