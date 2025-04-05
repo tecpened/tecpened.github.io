@@ -108,6 +108,7 @@
     justify-content: space-between;
     text-transform: lowercase;
     transition: 1s;
+    backdrop-filter: blur(.15em);
 }
 .icon-row{
     display: flex;
