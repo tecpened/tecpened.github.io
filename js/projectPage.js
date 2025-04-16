@@ -22,7 +22,8 @@ function fetchProjects(category, body) {
     // Clear existing projects before displaying new ones
     body.innerHTML = '';
     
-    const projectsData = categoryDataMap[category] || categoryDataMap["ui/ux"]; // Fallback to default category
+    // const projectsData = categoryDataMap[category] || categoryDataMap["ui/ux"]; // Fallback to default category
+    const projectsData = allProjects.filter(project => project.category === (category || 'ui/ux'));
     const projects = document.createElement('div');
     projects.className = 'projects';
     body.appendChild(projects);
@@ -49,7 +50,9 @@ function fetchProjects(category, body) {
         }, 100 * index);
 
         // Add event listener to open modal on project click
-        projectItem.addEventListener('click', () => openModal(project));
+        projectItem.addEventListener('click', () => {
+            window.location.href = `projectDetail.html?project=${project.id - 1}`;
+          });
     });
 
     // Re-display categories after fetching projects (in case new categories need to be shown)
@@ -88,3 +91,6 @@ function openModal(projectData) {
     modal.style.display = 'block';
 }
 
+const projectContainer = document.querySelector('.container');
+const initialCategory = 'ui/ux'; // Default category
+fetchProjects(initialCategory, projectContainer);

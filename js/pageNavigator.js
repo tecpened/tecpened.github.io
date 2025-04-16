@@ -1,4 +1,5 @@
 const container = document.querySelector('.container');
+// const projectContainer = document.querySelector('.project');
 
   
 // Call fetchHome function to load the content
@@ -110,10 +111,11 @@ const serviceCard = document.querySelector('#bento-4');
 
 projectCard.addEventListener('click', function() {
 
-  // Show the projects container
-  const initialCategory = 'ui/ux'; // Default category
-  fetchProjects(initialCategory, container);
-  document.body.appendChild(createNavbar('nav', iconNav, 'tecpen', 'resonating in style'));
+  // // Show the projects container
+  window.location.href = '../projects.html'
+  // const initialCategory = 'ui/ux'; // Default category
+  // fetchProjects(initialCategory, projectContainer);
+  // document.body.appendChild(createNavbar('nav', iconNav, 'tecpen', 'resonating in style'));
 
 });
 
