@@ -56,41 +56,9 @@ function fetchProjects(category, body) {
     });
 
     // Re-display categories after fetching projects (in case new categories need to be shown)
-    displayCategories(sidebarContent.projects.categories, body);
+    displayCategories(categoryDataMap, body);
 }
 
-// Function to create and show the modal dynamically
-function openModal(projectData) {
-    const modal = document.createElement('div');
-    modal.id = 'modal';
-    modal.innerHTML = `
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <img src="${projectData.image}" style="height: 40vh" />
-            <p>${projectData.category}</p>
-            <h1>${projectData.title}</h1>
-            <p>${projectData.description}</p>
-        </div>
-    `;
-    document.body.appendChild(modal);
-
-    // Event listener to close the modal
-    modal.querySelector('.close-btn').addEventListener('click', () => {
-        modal.style.display = 'none';
-        document.body.removeChild(modal);
-    });
-
-    // Close the modal if clicked outside
-    window.addEventListener('click', event => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-            document.body.removeChild(modal);
-        }
-    });
-
-    modal.style.display = 'block';
-}
-
-const projectContainer = document.querySelector('.container');
+const projectContainer = document.querySelector('.projectContainer');
 const initialCategory = 'ui/ux'; // Default category
 fetchProjects(initialCategory, projectContainer);

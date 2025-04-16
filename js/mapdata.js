@@ -142,7 +142,7 @@ const allProjects = [
         id: 9, 
         icons: '', 
         title: 'Project 2', 
-        category: 'web', 
+        category: 'software development', 
         image: './public/interior/2.png', 
         description: 'Description of Project 2',
         company: "Company Name",
@@ -155,7 +155,7 @@ const allProjects = [
         id: 10, 
         icons: '', 
         title: 'Project 2', 
-        category: 'web', 
+        category: 'software development', 
         image: './public/interior/2.png', 
         description: 'Description of Project 2',
         company: "Company Name",
@@ -168,7 +168,7 @@ const allProjects = [
         id: 11, 
         icons: '', 
         title: 'Project 2', 
-        category: 'web', 
+        category: 'software development', 
         image: './public/interior/2.png', 
         description: 'Description of Project 2',
         company: "Company Name",
@@ -181,7 +181,7 @@ const allProjects = [
         id: 12, 
         icons: '', 
         title: 'Project 2', 
-        category: 'web', 
+        category: 'software development', 
         image: './public/interior/2.png', 
         description: 'Description of Project 2',
         company: "Company Name",
@@ -194,7 +194,7 @@ const allProjects = [
         id: 13, 
         icons: '', 
         title: 'Project 2', 
-        category: 'web', 
+        category: 'software development', 
         image: './public/interior/2.png', 
         description: 'Description of Project 2',
         company: "Company Name",
@@ -207,7 +207,7 @@ const allProjects = [
         id: 14, 
         icons: '', 
         title: 'Project 2', 
-        category: 'web', 
+        category: 'software development', 
         image: './public/interior/2.png', 
         description: 'Description of Project 2',
         company: "Company Name",
@@ -220,7 +220,7 @@ const allProjects = [
         id: 15, 
         icons: '', 
         title: 'Project 2', 
-        category: 'web', 
+        category: 'software development', 
         image: './public/interior/2.png', 
         description: 'Description of Project 2',
         company: "Company Name",
@@ -233,7 +233,7 @@ const allProjects = [
         id: 16, 
         icons: '', 
         title: 'Project 2', 
-        category: 'web', 
+        category: 'software development', 
         image: './public/interior/2.png', 
         description: 'Description of Project 2',
         company: "Company Name",
@@ -333,30 +333,6 @@ const categoryDataMap = {
     Marketing: '',
     photography: ''
 };
-
-const sidebarContent = {
-    home: {
-        heading: "Home",
-        title: "tecpen",
-        subtitle: "resonating in style!"
-      },
-      projects: {
-        heading: "Projects",
-        title: "ui/ux design",
-        categories: categoryDataMap,
-        subtitle: "Here are some of our projects."
-      },
-      services: {
-        heading: "Services",
-        title: "tecpen",
-        subtitle: "Explore our services here."
-      },
-      contact: {
-        heading: "Contact",
-        title: "tecpen",
-        subtitle: "Feel free to reach out to us."
-      }
-    };
 
 
 const iconNav = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">

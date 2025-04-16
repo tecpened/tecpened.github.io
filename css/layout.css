@@ -196,6 +196,12 @@ canvas{
 }
 
 /* Projects */
+.projectContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 98vh;
+}
 .projects{
     padding: .5rem;
     display: flex;
@@ -204,7 +210,7 @@ canvas{
     border-radius: 1rem;
     /* height: 70vh; */
     overflow: scroll;
-    /* background-color: rgba(117, 117, 117, 0.068); */
+    background-color: rgba(117, 117, 117, 0.068);
 }
 .project-item {
     display: flex;
