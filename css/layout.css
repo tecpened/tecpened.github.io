@@ -51,7 +51,7 @@
     gap: var(--gap);
     height: 98vh;
 }
-
+/* Hero Section Mid Bento */
 #bento-3{
     padding: 0rem;
     clip-path: padding-box;
@@ -115,42 +115,29 @@
     justify-content: flex-end;
 }
 
-@keyframes borderRadial {
-    0% {
-        box-shadow: -4px 4px 5px rgba(255, 255, 255, .1); /* Initial white shadow */
-    }
-    25% {
-        box-shadow: 4px 4px 5px rgba(255, 255, 255, .05); /* White shadow rotation */
-    }
-    50% {
-        box-shadow: 4px -4px 5px rgba(255, 255, 255, .05); /* White shadow rotation */
-    }
-    75% {
-        box-shadow: -4px -4px 5px rgba(255, 255, 255, .05); /* White shadow rotation */
-    }
-    100% {
-        box-shadow: -4px 4px 5px rgba(255, 255, 255, .05); /* White shadow rotation */
-    }
-}
 
 #bento-1 {
     height: 15vh;   
-    animation: borderRadial 10s infinite; /* Smooth animation duration */;
-    box-shadow: -4px 4px 5px rgba(255, 255, 255, 0.1)
 }
 
-#bento-2, #bento-5{
-    animation: borderRadial 25s infinite; /* Smooth animation duration */;
-}
-#bento-3, #bento-6{
-    animation: borderRadial 30s infinite; /* Smooth animation duration */;
-}
 .bento-box:hover{
     background-color: var(--secondary-color);
-    text-transform: uppercase;
     transition: 1s;
 
 }
+
+.bento-box:hover h2{
+    text-transform: uppercase;
+    transition: 1s;
+    color: white;
+}
+.bento-box:hover h4{
+    text-transform: uppercase;
+    color: white;
+    opacity: 50%;
+    transition: .1s;
+}
+
 .firstRow {
     display: flex;
     width: 100%;

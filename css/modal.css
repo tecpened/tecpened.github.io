@@ -1,13 +1,13 @@
 .effect {
     content: '';
     background-color: rgb(135, 25, 209);
-    filter: blur(3rem);
+    filter: blur(4rem);
     opacity: 1;
     position: absolute;
     height: 20rem;
     width: 20rem;
     border-radius: 100%;
-    opacity: 40%;
+    opacity: 30%;
     z-index: 0;
     mix-blend-mode: color-dodge;
     transition: .5s;
@@ -26,23 +26,23 @@
     }
     25% {
         top: 10rem;
-        left: 20rem;
+        left: 10rem;
         background-color: rgb(34, 113, 204);
     }
     50% {
         top: 20rem;
         left: 20rem;
-        background-color: rgb(25, 209, 80);
+        background-color: rgb(25, 135, 209);
     }
     75% {
-        top: 30rem;
-        left: 40rem;
-        background-color: rgb(218, 159, 33);
+        top: 40rem;
+        left: 60rem;
+        background-color: rgb(226, 174, 63);
     }
     90% {
         top: 10rem;
-        left: 60rem;
-        background-color: rgb(233, 147, 36);
+        left: 80rem;
+        background-color: rgb(238, 128, 55);
     }
     100% {
         top: 8rem;

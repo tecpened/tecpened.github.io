@@ -149,7 +149,7 @@ function fetchHome() {
     // Append Bento Boxes to columns with unique IDs
     firstRowCol1.appendChild(createBentoBox('bento-1', iconNav, 'tecpen', 'resonating in style'));
     firstRowCol1.appendChild(createBentoBox('bento-2', icon1, 'Earth', 'Our home planet'));
-    firstRowCol2.appendChild(createHero('bento-3', icon1, 'Creating brands, thinking brands and resonating forever', 'Pagans and vikings, well'));
+    firstRowCol2.appendChild(createHero('bento-3', '', 'Creating brands, thinking brands and resonating forever', 'Pagans and vikings, well'));
     firstRowCol3.appendChild(createBentoBox('bento-4', icon1, 'services', 'Latest in smartphones'));
     secondRowCol1.appendChild(createBentoBox('bento-5', '🚀', 'Rocket', 'Travel beyond Earth'));
     secondRowCol2.appendChild(createBentoBox('bento-6', icon1, 'Space Exploration', 'Explore the universe'));
