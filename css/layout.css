@@ -20,7 +20,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 98vh;
+    height: 90vh;
 }
 .bottom{
     position: absolute;
@@ -56,6 +56,8 @@
     padding: 0rem;
     clip-path: padding-box;
     background-color: rgba(0, 0, 0, 0.5);
+    /* background-image: none; */
+    transition: 1s;
 }
 #bento-3 .bentotext{
     padding: 2rem;
@@ -79,11 +81,9 @@
     gap: 1rem;
     transition: transform 0.3s ease;  /* Smooth transition for hover effect */
 }
-
 .item:hover {
     transform: scale(1.05);  /* Slight zoom effect on hover */
 }
-
 .item h3 {
     font-size: 1.2rem;
     color: #333;
@@ -94,6 +94,35 @@
     color: #666;
     text-align: center;
 }
+
+.icon-row{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 13deg;
+    inherits: false;
+}
+.bento-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: .5px; /* controls the "thickness" illusion */
+    background: linear-gradient(var(--rotate), #585858, #222222 43%, #2c2c2c);
+    -webkit-mask:
+      linear-gradient(#000000 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 1;
+    pointer-events: none;
+    cursor: pointer;
+    animation: spin 7s linear infinite;
+  }
 
 .bento-box {
     position: relative;
@@ -110,20 +139,21 @@
     transition: 1s;
     backdrop-filter: blur(.15em);
 }
-.icon-row{
-    display: flex;
-    justify-content: flex-end;
-}
 
-
-#bento-1 {
-    height: 15vh;   
-}
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
 
 .bento-box:hover{
+    /* cursor: pointer; */
     background-color: var(--secondary-color);
     transition: 1s;
-
+    
 }
 
 .bento-box:hover h2{
@@ -136,6 +166,10 @@
     color: white;
     opacity: 50%;
     transition: .1s;
+}
+
+#bento-1 {
+    height: 15vh;   
 }
 
 .firstRow {
@@ -200,7 +234,7 @@ canvas{
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 98vh;
+    height: 90vh;
 }
 .projects{
     padding: .5rem;
